@@ -1,6 +1,12 @@
-[gd_scene load_steps=2 format=3 uid="uid://cynjmvueo4jge"]
+[gd_scene load_steps=8 format=3 uid="uid://cynjmvueo4jge"]
 
 [ext_resource type="Script" path="res://MainMenu.gd" id="1_j3tm6"]
+[ext_resource type="Texture2D" uid="uid://3sn88ugna6l4" path="res://mmparallax/sky.png" id="2_bpfku"]
+[ext_resource type="Texture2D" uid="uid://cbcys3e4yj0wh" path="res://mmparallax/mountain2.png" id="3_wotg7"]
+[ext_resource type="Texture2D" uid="uid://d3dotsv46cfpn" path="res://mmparallax/pine2.png" id="4_ankox"]
+[ext_resource type="Texture2D" uid="uid://cirmmdqqgb4rj" path="res://mmparallax/pine1.png" id="5_l5tuh"]
+[ext_resource type="Script" path="res://ParallaxLayer2.gd" id="6_i8rg6"]
+[ext_resource type="Texture2D" uid="uid://db4h53km1ejes" path="res://mmparallax/cloud.png" id="7_853ja"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -11,10 +17,59 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_j3tm6")
 
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+texture_filter = 1
+scale = Vector2(2, 2)
+texture = ExtResource("2_bpfku")
+centered = false
+
+[node name="Sprite2D4" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+texture_filter = 1
+position = Vector2(0, 200)
+scale = Vector2(2, 2)
+texture = ExtResource("3_wotg7")
+centered = false
+
+[node name="Sprite2D3" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+texture_filter = 1
+position = Vector2(0, 250)
+scale = Vector2(2, 2)
+texture = ExtResource("4_ankox")
+centered = false
+
+[node name="Sprite2D2" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+texture_filter = 1
+position = Vector2(0, 400)
+scale = Vector2(2, 2)
+texture = ExtResource("5_l5tuh")
+centered = false
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(1200, 0)
+script = ExtResource("6_i8rg6")
+
+[node name="Sprite2D5" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
+texture_filter = 1
+position = Vector2(339, 207)
+texture = ExtResource("7_853ja")
+
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -35.0
+offset_top = -101.0
+offset_right = 35.0
+grow_horizontal = 2
+grow_vertical = 0
 
 [node name="Start" type="Button" parent="VBoxContainer"]
 layout_mode = 2
@@ -28,5 +83,3 @@ text = "Options"
 [node name="Quit" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 text = "Quit"
-
-[connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]
