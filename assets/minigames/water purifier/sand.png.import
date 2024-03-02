@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b077ds8rgliki"
-path="res://.godot/imported/water purfier.png-a4a5c2307622eeadb0dd2c74e892da63.ctex"
+uid="uid://l8pdg6wficxu"
+path="res://.godot/imported/sand.png-2f5a231fabbc678132ff58f69122a5f6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/minigames/water purifier/water purfier.png"
-dest_files=["res://.godot/imported/water purfier.png-a4a5c2307622eeadb0dd2c74e892da63.ctex"]
+source_file="res://assets/minigames/water purifier/sand.png"
+dest_files=["res://.godot/imported/sand.png-2f5a231fabbc678132ff58f69122a5f6.ctex"]
 
 [params]
 
