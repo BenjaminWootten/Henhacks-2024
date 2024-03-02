@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://cbcys3e4yj0wh" path="res://mmparallax/mountain2.png" id="3_wotg7"]
 [ext_resource type="Texture2D" uid="uid://d3dotsv46cfpn" path="res://mmparallax/pine2.png" id="4_ankox"]
 [ext_resource type="Texture2D" uid="uid://cirmmdqqgb4rj" path="res://mmparallax/pine1.png" id="5_l5tuh"]
-[ext_resource type="Script" path="res://ParallaxLayer2.gd" id="6_i8rg6"]
+[ext_resource type="Script" path="res://UI/ParallaxLayer2.gd" id="6_i8rg6"]
 [ext_resource type="Texture2D" uid="uid://db4h53km1ejes" path="res://mmparallax/cloud.png" id="7_853ja"]
 
 [node name="Menu" type="Control"]
