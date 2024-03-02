@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://dkh5qd2vbmivp"
-path="res://.godot/imported/Notepen.ttf-b5c56b333616182e538d5cc32d6f2fe2.fontdata"
+path="res://.godot/imported/Notepen.ttf-5b871d5825fb1489d676e68c31735739.fontdata"
 
 [deps]
 
-source_file="res://assets/Notepen.ttf"
-dest_files=["res://.godot/imported/Notepen.ttf-b5c56b333616182e538d5cc32d6f2fe2.fontdata"]
+source_file="res://assets/UI/Notepen.ttf"
+dest_files=["res://.godot/imported/Notepen.ttf-5b871d5825fb1489d676e68c31735739.fontdata"]
 
 [params]
 

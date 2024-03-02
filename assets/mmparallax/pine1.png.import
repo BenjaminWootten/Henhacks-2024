@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cbcys3e4yj0wh"
-path="res://.godot/imported/mountain2.png-e0e1b3eaa82a77caea630ae85daa1521.ctex"
+uid="uid://cirmmdqqgb4rj"
+path="res://.godot/imported/pine1.png-f18382c98c14fe1b1f5517137303e214.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://mmparallax/mountain2.png"
-dest_files=["res://.godot/imported/mountain2.png-e0e1b3eaa82a77caea630ae85daa1521.ctex"]
+source_file="res://assets/mmparallax/pine1.png"
+dest_files=["res://.godot/imported/pine1.png-f18382c98c14fe1b1f5517137303e214.ctex"]
 
 [params]
 

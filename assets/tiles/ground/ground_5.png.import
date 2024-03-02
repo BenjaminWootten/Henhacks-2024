@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cirmmdqqgb4rj"
-path="res://.godot/imported/pine1.png-ed46c1aa3ef89dcb66a68b19e66511aa.ctex"
+uid="uid://bdwvh41wixu3g"
+path="res://.godot/imported/ground_5.png-c694ce6ef57563eee3c996d267a91ba8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://mmparallax/pine1.png"
-dest_files=["res://.godot/imported/pine1.png-ed46c1aa3ef89dcb66a68b19e66511aa.ctex"]
+source_file="res://assets/tiles/ground/ground_5.png"
+dest_files=["res://.godot/imported/ground_5.png-c694ce6ef57563eee3c996d267a91ba8.ctex"]
 
 [params]
 
