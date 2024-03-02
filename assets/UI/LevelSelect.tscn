@@ -32,6 +32,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_wu8nh")
@@ -122,3 +123,29 @@ theme_override_styles/pressed = SubResource("StyleBoxEmpty_ebknh")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_ebknh")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_ebknh")
 text = "Orient Compass"
+
+[node name="Button4" type="Button" parent="Notepad"]
+offset_left = -112.5
+offset_top = -16.25
+offset_right = 43.5
+offset_bottom = 14.75
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_srkwc")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ebknh")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_ebknh")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_ebknh")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ebknh")
+text = "Pitch Tent"
+alignment = 0
