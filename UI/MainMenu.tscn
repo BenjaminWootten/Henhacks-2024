@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cynjmvueo4jge"]
+[gd_scene load_steps=9 format=3 uid="uid://cynjmvueo4jge"]
 
 [ext_resource type="Script" path="res://MainMenu.gd" id="1_j3tm6"]
 [ext_resource type="Texture2D" uid="uid://3sn88ugna6l4" path="res://mmparallax/sky.png" id="2_bpfku"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cirmmdqqgb4rj" path="res://mmparallax/pine1.png" id="5_l5tuh"]
 [ext_resource type="Script" path="res://UI/ParallaxLayer2.gd" id="6_i8rg6"]
 [ext_resource type="Texture2D" uid="uid://db4h53km1ejes" path="res://mmparallax/cloud.png" id="7_853ja"]
+[ext_resource type="FontFile" uid="uid://dkh5qd2vbmivp" path="res://assets/Notepen.ttf" id="8_ml1qp"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -20,32 +21,31 @@ script = ExtResource("1_j3tm6")
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_scale = Vector2(0, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
 texture_filter = 1
-scale = Vector2(2, 2)
+scale = Vector2(2.5, 2.5)
 texture = ExtResource("2_bpfku")
 centered = false
 
 [node name="Sprite2D4" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
 texture_filter = 1
 position = Vector2(0, 200)
-scale = Vector2(2, 2)
+scale = Vector2(2.5, 2.5)
 texture = ExtResource("3_wotg7")
 centered = false
 
 [node name="Sprite2D3" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
 texture_filter = 1
 position = Vector2(0, 250)
-scale = Vector2(2, 2)
+scale = Vector2(2.5, 2.5)
 texture = ExtResource("4_ankox")
 centered = false
 
 [node name="Sprite2D2" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
 texture_filter = 1
 position = Vector2(0, 400)
-scale = Vector2(2, 2)
+scale = Vector2(2.5, 2.5)
 texture = ExtResource("5_l5tuh")
 centered = false
 
@@ -55,7 +55,8 @@ script = ExtResource("6_i8rg6")
 
 [node name="Sprite2D5" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
 texture_filter = 1
-position = Vector2(339, 207)
+position = Vector2(215, 142)
+scale = Vector2(0.632353, 0.632353)
 texture = ExtResource("7_853ja")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
@@ -73,13 +74,21 @@ grow_vertical = 0
 
 [node name="Start" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("8_ml1qp")
+theme_override_font_sizes/font_size = 30
 text = "Start
 "
 
 [node name="Options" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("8_ml1qp")
+theme_override_font_sizes/font_size = 30
 text = "Options"
 
 [node name="Quit" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("8_ml1qp")
+theme_override_font_sizes/font_size = 30
 text = "Quit"
+
+[connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]
