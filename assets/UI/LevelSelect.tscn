@@ -125,10 +125,10 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_ebknh")
 text = "Orient Compass"
 
 [node name="Button4" type="Button" parent="Notepad"]
-offset_left = -112.5
-offset_top = -16.25
-offset_right = 43.5
-offset_bottom = 14.75
+offset_left = -112.0
+offset_top = -16.0
+offset_right = 4.0
+offset_bottom = 15.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
