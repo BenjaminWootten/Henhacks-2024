@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cynjmvueo4jge"]
+[gd_scene load_steps=10 format=3 uid="uid://cynjmvueo4jge"]
 
 [ext_resource type="Script" path="res://MainMenu.gd" id="1_j3tm6"]
 [ext_resource type="Texture2D" uid="uid://3sn88ugna6l4" path="res://assets/mmparallax/sky.png" id="2_bpfku"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" path="res://assets/UI/ParallaxLayer2.gd" id="6_i8rg6"]
 [ext_resource type="Texture2D" uid="uid://db4h53km1ejes" path="res://assets/mmparallax/cloud.png" id="7_853ja"]
 [ext_resource type="FontFile" uid="uid://dkh5qd2vbmivp" path="res://assets/UI/Notepen.ttf" id="8_ml1qp"]
+[ext_resource type="PackedScene" uid="uid://6idr7pifkhno" path="res://assets/UI/LevelSelect.tscn" id="9_ghaku"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -90,5 +91,11 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("8_ml1qp")
 theme_override_font_sizes/font_size = 30
 text = "Quit"
+
+[node name="Ground" parent="." instance=ExtResource("9_ghaku")]
+layout_mode = 1
+offset_top = 755.0
+offset_right = -4.0
+offset_bottom = 220.0
 
 [connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]

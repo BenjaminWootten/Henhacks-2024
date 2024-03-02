@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ba4my04sqjglx"
-path="res://.godot/imported/ground_6.png-56419cf9161ad839a455a751433209eb.ctex"
+uid="uid://bpxo6ivcc1h8v"
+path="res://.godot/imported/tent_dark.png-25dee99442341014542f602a81d2b349.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tiles/ground/ground_6.png"
-dest_files=["res://.godot/imported/ground_6.png-56419cf9161ad839a455a751433209eb.ctex"]
+source_file="res://assets/campsite/tent_dark.png"
+dest_files=["res://.godot/imported/tent_dark.png-25dee99442341014542f602a81d2b349.ctex"]
 
 [params]
 
