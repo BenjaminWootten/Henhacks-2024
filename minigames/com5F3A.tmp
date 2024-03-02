@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://ddrlquw7pj5o4"]
+
+[ext_resource type="Script" path="res://minigames/compass.gd" id="1_lmv7u"]
+[ext_resource type="Texture2D" uid="uid://dgiftnoxd3t6f" path="res://assets/minigames/compass_placeholder.png" id="2_bphx0"]
+
+[node name="compass" type="Node2D"]
+position = Vector2(485, 313)
+script = ExtResource("1_lmv7u")
+
+[node name="dial_sprite" type="Sprite2D" parent="."]
+texture_filter = 1
+rotation = 1.5708
+scale = Vector2(3, 3)
+texture = ExtResource("2_bphx0")
