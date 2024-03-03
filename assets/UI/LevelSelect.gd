@@ -11,4 +11,4 @@ func _ready():
 	if(global.water_completed==true):
 		$Sprite2D6.visible=true
 	if(global.fire_complete==true):
-		print("HI")
+		$Sprite2D8.visible=true
