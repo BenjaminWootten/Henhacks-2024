@@ -103,12 +103,6 @@ theme_override_font_sizes/font_size = 30
 text = "Start
 "
 
-[node name="Options" type="Button" parent="VBoxContainer"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("8_ml1qp")
-theme_override_font_sizes/font_size = 30
-text = "Options"
-
 [node name="Quit" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("8_ml1qp")
@@ -242,6 +236,7 @@ text = "Setup Tent"
 metadata/_edit_use_anchors_ = true
 
 [connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]
 [connection signal="pressed" from="Ground/Notepad/WaterButton" to="Ground/Notepad" method="_on_water_button_pressed"]
 [connection signal="pressed" from="Ground/Notepad/FireButton" to="Ground/Notepad" method="_on_fire_button_pressed"]
 [connection signal="pressed" from="Ground/Notepad/CompassButton" to="Ground/Notepad" method="_on_compass_button_pressed"]

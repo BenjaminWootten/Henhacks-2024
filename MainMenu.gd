@@ -23,3 +23,7 @@ func _process(delta):
 func _on_start_pressed():
 	buttons.visible = false
 	started = true
+
+
+func _on_quit_pressed():
+	get_tree().quit()
