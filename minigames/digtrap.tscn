@@ -1,25 +1,145 @@
-[gd_scene load_steps=4 format=3 uid="uid://b8rwxdydp0i4n"]
+[gd_scene load_steps=22 format=3 uid="uid://b8rwxdydp0i4n"]
 
-[ext_resource type="Texture2D" uid="uid://bhupee4gvehfi" path="res://assets/minigames/digtrap/New Piskel-5.png.png" id="1_o1mht"]
+[ext_resource type="Script" path="res://minigames/digtrap.gd" id="1_ebn5a"]
+[ext_resource type="Texture2D" uid="uid://co5yqni0eo36w" path="res://assets/minigames/digtrap/sprite_11.png" id="2_k2b75"]
 [ext_resource type="Texture2D" uid="uid://bub4endycbru5" path="res://assets/minigames/digtrap/sprite_1.png" id="2_pvrhe"]
-[ext_resource type="Texture2D" uid="uid://dww4mbigpupli" path="res://assets/minigames/digtrap/sprite_3.png" id="3_nlo4b"]
+[ext_resource type="PackedScene" uid="uid://dyo1photquadc" path="res://utility/draggable_object.tscn" id="3_3d6ej"]
+[ext_resource type="Texture2D" uid="uid://dfxettkfrut3i" path="res://assets/minigames/digtrap/sprite_10.png" id="5_8721q"]
+[ext_resource type="Texture2D" uid="uid://dydfw6e28uea1" path="res://assets/minigames/digtrap/sprite_00.png" id="7_vsgaq"]
+[ext_resource type="Texture2D" uid="uid://w62d2a43hncr" path="res://assets/minigames/digtrap/sprite_01.png" id="8_jucc2"]
+[ext_resource type="Texture2D" uid="uid://diti2qr1vwrj2" path="res://assets/minigames/digtrap/sprite_06.png" id="9_2chvc"]
+[ext_resource type="Texture2D" uid="uid://bjv57sh26eqp" path="res://assets/minigames/digtrap/sprite_05.png" id="10_tdchh"]
+[ext_resource type="Texture2D" uid="uid://doqxkyhc5up5g" path="res://assets/minigames/digtrap/sprite_04.png" id="11_dixht"]
+[ext_resource type="Texture2D" uid="uid://cd4nly80og06i" path="res://assets/minigames/digtrap/sprite_03.png" id="12_a6fpl"]
+[ext_resource type="Texture2D" uid="uid://x76jt2bg7j3u" path="res://assets/minigames/digtrap/sprite_02.png" id="13_5lnpy"]
+[ext_resource type="Texture2D" uid="uid://bbavbsdk0p0gi" path="res://assets/minigames/digtrap/sprite_07.png" id="14_ixe6c"]
+[ext_resource type="Texture2D" uid="uid://d15asuchweivo" path="res://assets/minigames/digtrap/sprite_08.png" id="15_4kggt"]
+[ext_resource type="Texture2D" uid="uid://bqdmd556jvlla" path="res://assets/minigames/digtrap/sprite_12.png" id="16_hk5ut"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_um06m"]
+radius = 66.0
+height = 266.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xo4wr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_pvrhe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_8721q")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t6llu"]
+size = Vector2(27.0208, 20.4167)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cwmig"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_vsgaq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_jucc2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_2chvc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_tdchh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_dixht")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_a6fpl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_5lnpy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_ixe6c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_4kggt")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7awba"]
+radius = 24.0052
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_b4ts5"]
+radius = 56.1427
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource("1_ebn5a")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(500, 500)
-texture = ExtResource("1_o1mht")
+[node name="solid" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(226, 313)
+scale = Vector2(2, 2)
+texture = ExtResource("2_k2b75")
 
-[node name="Sprite2D2" type="Sprite2D" parent="."]
-position = Vector2(15852, -7586)
-scale = Vector2(300, 300)
-texture = ExtResource("2_pvrhe")
+[node name="shovel" parent="." instance=ExtResource("3_3d6ej")]
+position = Vector2(642, 182)
+collision_mask = 2
 
-[node name="Sprite2D3" type="Sprite2D" parent="."]
-position = Vector2(23624, 7464)
-scale = Vector2(600, 600)
-texture = ExtResource("3_nlo4b")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="shovel"]
+position = Vector2(-25, -18)
+shape = SubResource("CapsuleShape2D_um06m")
 
-[node name="Sprite3" type="Sprite2D" parent="."]
-position = Vector2(42144, -3850)
-texture = ExtResource("3_nlo4b")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="shovel"]
+scale = Vector2(5, 5)
+sprite_frames = SubResource("SpriteFrames_xo4wr")
+
+[node name="ground_undig" type="Area2D" parent="."]
+position = Vector2(611, 297)
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ground_undig"]
+position = Vector2(-74, 304)
+scale = Vector2(12, 12)
+shape = SubResource("RectangleShape2D_t6llu")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="ground_undig"]
+position = Vector2(-21, 14)
+scale = Vector2(12, 12)
+sprite_frames = SubResource("SpriteFrames_cwmig")
+
+[node name="leaf1" parent="." instance=ExtResource("3_3d6ej")]
+visible = false
+position = Vector2(887, 343)
+scale = Vector2(2, 2)
+collision_layer = 4
+collision_mask = 2
+
+[node name="leaf1" type="Sprite2D" parent="leaf1"]
+texture = ExtResource("16_hk5ut")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="leaf1"]
+shape = SubResource("CircleShape2D_7awba")
+
+[node name="leaf2" parent="." instance=ExtResource("3_3d6ej")]
+visible = false
+position = Vector2(1055, 339)
+collision_layer = 4
+collision_mask = 2
+
+[node name="leaf2" type="Sprite2D" parent="leaf2"]
+scale = Vector2(2, 2)
+texture = ExtResource("16_hk5ut")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="leaf2"]
+shape = SubResource("CircleShape2D_b4ts5")
+
+[connection signal="area_entered" from="shovel" to="." method="_on_shovel_area_entered"]
+[connection signal="input_event" from="ground_undig" to="ground_undig" method="_on_input_event"]
+[connection signal="area_entered" from="leaf1" to="." method="_on_leaf_1_area_entered"]
+[connection signal="area_entered" from="leaf2" to="." method="_on_leaf_2_area_entered"]
