@@ -24,10 +24,7 @@ func _on_stone_area_entered(area):
 
 
 func _on_stone_mouse_entered():
-	print(box)
 	box.visible=true
 	label.text="stones"
-
-
 func _on_stone_mouse_exited():
 	box.visible=false
