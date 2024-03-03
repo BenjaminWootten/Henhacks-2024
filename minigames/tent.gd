@@ -1,6 +1,13 @@
 extends Node2D
 
 @onready var tent_sprite = $unbuilt_tent/AnimatedSprite2D
+@onready var tip=$PanelContainer/HBoxContainer/Label
+@onready var label=$Control/MarginContainer/MarginContainer/Label
+@onready var box=$Control
+@onready var global=get_node("/root/Global")
+
+func _ready():
+	tip.text="Build dat bitch"
 
 func _on_long_pole_area_entered(_area):
 	if tent_sprite.animation == "laid":
@@ -90,4 +97,77 @@ func _on_stake_4_area_entered(_area):
 		tent_complete()
 
 func tent_complete():
-	print("tent complete")
+	get_tree().change_scene_to_file("res://assets/UI/LevelSelect.tscn")
+	global.tent_completed=true
+
+func _on_long_pole_mouse_entered():
+	box.visible=true
+	label.text="long pole"
+func _on_long_pole_2_mouse_entered():
+	box.visible=true
+	label.text="long pole"
+func _on_short_pole_mouse_entered():
+	box.visible=true
+	label.text="short pole"
+func _on_stick_mouse_entered():
+	box.visible=true
+	label.text="stick"
+func _on_rain_fly_mouse_entered():
+	box.visible=true
+	label.text="rain fly"
+func _on_stake_mouse_entered():
+	box.visible=true
+	label.text="stake"
+func _on_stake_2_mouse_entered():
+	box.visible=true
+	label.text="stake"
+func _on_stake_3_mouse_entered():
+	box.visible=true
+	label.text="stake"
+func _on_stake_4_mouse_entered():
+	box.visible=true
+	label.text="stake"
+func _on_unbuilt_tent_mouse_entered():
+	box.visible=true
+	label.text="unfinished tent"
+
+
+
+func _on_unbuilt_tent_mouse_exited():
+	box.visible=false
+
+
+func _on_long_pole_mouse_exited():
+	box.visible=false
+
+
+func _on_long_pole_2_mouse_exited():
+	box.visible=false
+
+
+func _on_short_pole_mouse_exited():
+	box.visible=false
+
+
+func _on_stick_mouse_exited():
+	box.visible=false
+
+
+func _on_rain_fly_mouse_exited():
+	box.visible=false
+
+
+func _on_stake_mouse_exited():
+	box.visible=false
+
+
+func _on_stake_2_mouse_exited():
+	box.visible=false
+
+
+func _on_stake_3_mouse_exited():
+	box.visible=false
+
+
+func _on_stake_4_mouse_exited():
+	box.visible=false

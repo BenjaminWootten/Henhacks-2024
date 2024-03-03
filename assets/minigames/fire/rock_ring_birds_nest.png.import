@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://becl6yidogn4h"
-path="res://.godot/imported/hover.png-044cd8f4b9e0b300b8db687992dadf0a.ctex"
+uid="uid://g0mgu30fyfsw"
+path="res://.godot/imported/rock_ring_birds_nest.png-6861a1147ad955e468110f1b5e399ec4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/UI/back/hover.png"
-dest_files=["res://.godot/imported/hover.png-044cd8f4b9e0b300b8db687992dadf0a.ctex"]
+source_file="res://assets/minigames/fire/rock_ring_birds_nest.png"
+dest_files=["res://.godot/imported/rock_ring_birds_nest.png-6861a1147ad955e468110f1b5e399ec4.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dsat7xljll0oj"
-path="res://.godot/imported/rock3.png-57067145058370a62429dd2af1cb32a9.ctex"
+uid="uid://t11tf6v1eorg"
+path="res://.godot/imported/birds_nest.png-df8fd5f15820c48fe30e2a82eb51aab6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/minigames/fire/rock3.png"
-dest_files=["res://.godot/imported/rock3.png-57067145058370a62429dd2af1cb32a9.ctex"]
+source_file="res://assets/minigames/fire/birds_nest.png"
+dest_files=["res://.godot/imported/birds_nest.png-df8fd5f15820c48fe30e2a82eb51aab6.ctex"]
 
 [params]
 

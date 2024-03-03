@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b434tjjb2jnwa"
-path="res://.godot/imported/rock1.png-0cfe38213e12d085be32199d2b0f2615.ctex"
+uid="uid://ccqm6r2eilkn0"
+path="res://.godot/imported/rock_ring_logs.png-19d8239e2c4fbfccee415155065008cd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/minigames/fire/rock1.png"
-dest_files=["res://.godot/imported/rock1.png-0cfe38213e12d085be32199d2b0f2615.ctex"]
+source_file="res://assets/minigames/fire/rock_ring_logs.png"
+dest_files=["res://.godot/imported/rock_ring_logs.png-19d8239e2c4fbfccee415155065008cd.ctex"]
 
 [params]
 
