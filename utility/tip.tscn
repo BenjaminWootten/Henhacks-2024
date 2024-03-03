@@ -4,6 +4,7 @@
 [ext_resource type="FontFile" uid="uid://dkh5qd2vbmivp" path="res://assets/UI/Notepen.ttf" id="2_16cwy"]
 
 [node name="Control" type="Control"]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://inbr3kmp16dx"]
+[gd_scene load_steps=11 format=3 uid="uid://inbr3kmp16dx"]
 
 [ext_resource type="PackedScene" uid="uid://dyo1photquadc" path="res://utility/draggable_object.tscn" id="1_ppbyw"]
 [ext_resource type="Texture2D" uid="uid://btdy65i03mlpc" path="res://assets/minigames/fire/fuel.png" id="2_ojy2e"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://b434tjjb2jnwa" path="res://assets/minigames/fire/rock1.png" id="4_6a56n"]
 [ext_resource type="Texture2D" uid="uid://bl0uvuxsft1i4" path="res://assets/minigames/fire/rock2.png" id="5_k12cm"]
 [ext_resource type="Texture2D" uid="uid://dsat7xljll0oj" path="res://assets/minigames/fire/rock3.png" id="6_ucbqs"]
+[ext_resource type="PackedScene" uid="uid://df10wyvwcyaao" path="res://utility/tip.tscn" id="7_dg5sc"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_82cm6"]
 animations = [{
@@ -56,3 +57,5 @@ texture = ExtResource("2_ojy2e")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="draggable_object"]
 shape = SubResource("RectangleShape2D_0i7w0")
+
+[node name="Control" parent="draggable_object" instance=ExtResource("7_dg5sc")]

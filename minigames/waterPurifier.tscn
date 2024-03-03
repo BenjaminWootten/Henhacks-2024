@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://bb3ooprnwnq8j"]
+[gd_scene load_steps=21 format=3 uid="uid://bb3ooprnwnq8j"]
 
 [ext_resource type="Script" path="res://minigames/waterPurifier.gd" id="1_a7yem"]
 [ext_resource type="Texture2D" uid="uid://3sn88ugna6l4" path="res://assets/mmparallax/sky.png" id="2_2sv0j"]
@@ -13,6 +13,8 @@
 [ext_resource type="Texture2D" uid="uid://bfrhqdphp4lco" path="res://assets/minigames/water purifier/moss.png" id="7_h6jnw"]
 [ext_resource type="Texture2D" uid="uid://l8pdg6wficxu" path="res://assets/minigames/water purifier/sand.png" id="8_23emf"]
 [ext_resource type="Texture2D" uid="uid://c27rotpqs48og" path="res://assets/minigames/water purifier/stone.png" id="9_c1whs"]
+[ext_resource type="PackedScene" uid="uid://df10wyvwcyaao" path="res://utility/tip.tscn" id="14_6reow"]
+[ext_resource type="PackedScene" uid="uid://bnwstotpwaiy8" path="res://assets/UI/bottomtray.tscn" id="15_xh53m"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_g60k8"]
 animations = [{
@@ -104,11 +106,6 @@ shape = SubResource("CapsuleShape2D_e777j")
 scale = Vector2(6, 6)
 texture = ExtResource("7_h6jnw")
 
-[node name="Label" type="Label" parent="moss"]
-offset_right = 40.0
-offset_bottom = 23.0
-text = "moss"
-
 [node name="sand" parent="." instance=ExtResource("6_4uu51")]
 position = Vector2(738, 493)
 collision_layer = 2
@@ -120,11 +117,6 @@ shape = SubResource("CircleShape2D_kjmyx")
 [node name="Sprite2D" type="Sprite2D" parent="sand"]
 scale = Vector2(6, 6)
 texture = ExtResource("8_23emf")
-
-[node name="Label" type="Label" parent="sand"]
-offset_right = 40.0
-offset_bottom = 23.0
-text = "sand"
 
 [node name="stone" parent="." instance=ExtResource("6_4uu51")]
 position = Vector2(744, 156)
@@ -138,11 +130,15 @@ texture = ExtResource("9_c1whs")
 scale = Vector2(4.08001, 4.08001)
 shape = SubResource("CircleShape2D_he26c")
 
-[node name="Label" type="Label" parent="stone"]
-offset_right = 40.0
-offset_bottom = 23.0
-rotation = 0.0189769
-text = "stone"
+[node name="Control" parent="." instance=ExtResource("14_6reow")]
+offset_left = 364.0
+offset_top = 460.0
+offset_right = 364.0
+offset_bottom = 460.0
+
+[node name="PanelContainer" parent="." instance=ExtResource("15_xh53m")]
+offset_top = 548.0
+offset_bottom = 648.0
 
 [connection signal="area_entered" from="bottle" to="." method="_on_bottle_area_entered"]
 [connection signal="area_entered" from="bottle" to="bottle" method="_on_area_entered"]
@@ -150,3 +146,5 @@ text = "stone"
 [connection signal="area_entered" from="moss" to="." method="_on_moss_area_entered"]
 [connection signal="area_entered" from="sand" to="." method="_on_sand_area_entered"]
 [connection signal="area_entered" from="stone" to="." method="_on_stone_area_entered"]
+[connection signal="mouse_entered" from="stone" to="." method="_on_stone_mouse_entered"]
+[connection signal="mouse_exited" from="stone" to="." method="_on_stone_mouse_exited"]

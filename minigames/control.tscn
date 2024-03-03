@@ -1,0 +1,38 @@
+[gd_scene load_steps=3 format=3 uid="uid://xd5b6a5j0l5j"]
+
+[ext_resource type="Texture2D" uid="uid://bse2ktj60yh1d" path="res://assets/UI/rect.png" id="1_5kvx5"]
+[ext_resource type="Texture2D" uid="uid://dh3r638y3ki88" path="res://assets/UI/ranger.jpg" id="2_romsy"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer2" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="NinePatchRect" type="NinePatchRect" parent="MarginContainer2"]
+layout_mode = 2
+texture = ExtResource("1_5kvx5")
+patch_margin_left = 10
+patch_margin_top = 10
+patch_margin_right = 10
+patch_margin_bottom = 10
+
+[node name="Sprite2D" type="Sprite2D" parent="MarginContainer2"]
+position = Vector2(7, 7)
+scale = Vector2(0.811257, 0.631484)
+texture = ExtResource("2_romsy")
+centered = false
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer2"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
