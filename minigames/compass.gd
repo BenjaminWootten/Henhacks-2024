@@ -42,3 +42,11 @@ func _input(event):
 			locked = true
 		else:
 			locked = false
+
+func check_rotation(angle):
+	if locked:
+		var dial = dial_sprite.rotation
+		var needle = needle_sprite.rotation
+		if dial > angle-PI/18 and dial < angle+PI/18:
+			return true
+	return false
