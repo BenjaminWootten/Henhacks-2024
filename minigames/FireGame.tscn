@@ -1,9 +1,10 @@
-[gd_scene load_steps=35 format=3 uid="uid://inbr3kmp16dx"]
+[gd_scene load_steps=36 format=3 uid="uid://inbr3kmp16dx"]
 
 [ext_resource type="Script" path="res://minigames/FireGame.gd" id="1_1mx15"]
 [ext_resource type="Texture2D" uid="uid://g0mgu30fyfsw" path="res://assets/minigames/fire/rock_ring_birds_nest.png" id="1_efhom"]
 [ext_resource type="PackedScene" uid="uid://dyo1photquadc" path="res://utility/draggable_object.tscn" id="1_ppbyw"]
 [ext_resource type="Texture2D" uid="uid://dw6yxedm2rp2r" path="res://assets/minigames/fire/burning_loop_1.png" id="2_fm5kg"]
+[ext_resource type="PackedScene" uid="uid://cxp7764ywa85m" path="res://utility/ground.tscn" id="2_fwlcw"]
 [ext_resource type="Texture2D" uid="uid://btdy65i03mlpc" path="res://assets/minigames/fire/fuel.png" id="2_ojy2e"]
 [ext_resource type="Texture2D" uid="uid://u1pbfkl8qr4l" path="res://assets/minigames/fire/burning_start_1.png" id="3_fc1fj"]
 [ext_resource type="Texture2D" uid="uid://dwq35o2nyas24" path="res://assets/minigames/fire/rock_ring_kindling.png" id="3_q1fmh"]
@@ -176,10 +177,14 @@ size = Vector2(126, 28)
 [node name="FireGame" type="Node2D"]
 script = ExtResource("1_1mx15")
 
+[node name="ground" parent="." instance=ExtResource("2_fwlcw")]
+
 [node name="firePit" type="StaticBody2D" parent="."]
+texture_filter = 1
 position = Vector2(233, 221)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="firePit"]
+texture_filter = 1
 scale = Vector2(6, 6)
 sprite_frames = SubResource("SpriteFrames_82cm6")
 animation = &"empty"
