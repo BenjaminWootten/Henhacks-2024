@@ -1,8 +1,9 @@
-[gd_scene load_steps=27 format=3 uid="uid://bnhdqbe2qsnxs"]
+[gd_scene load_steps=28 format=3 uid="uid://bnhdqbe2qsnxs"]
 
 [ext_resource type="Texture2D" uid="uid://c0jtquhbuga5b" path="res://assets/minigames/tent/tent_laid.png" id="1_jscna"]
 [ext_resource type="Texture2D" uid="uid://bn0wr48lahgiv" path="res://assets/minigames/tent/tent_back_built.png" id="1_ps7fy"]
 [ext_resource type="Script" path="res://minigames/tent.gd" id="1_vw6ua"]
+[ext_resource type="PackedScene" uid="uid://cxp7764ywa85m" path="res://utility/ground.tscn" id="2_ile4p"]
 [ext_resource type="Texture2D" uid="uid://buivwxwx6vhqk" path="res://assets/minigames/tent/tent_dark_window_closed.png" id="2_joeqn"]
 [ext_resource type="PackedScene" uid="uid://dyo1photquadc" path="res://utility/draggable_object.tscn" id="2_tvp78"]
 [ext_resource type="Texture2D" uid="uid://bn7uakai6xshf" path="res://assets/minigames/tent/tent_pole_long.png" id="3_1i26n"]
@@ -122,6 +123,8 @@ size = Vector2(15, 24.5)
 
 [node name="tent" type="Node2D"]
 script = ExtResource("1_vw6ua")
+
+[node name="ground" parent="." instance=ExtResource("2_ile4p")]
 
 [node name="unbuilt_tent" type="Area2D" parent="."]
 position = Vector2(226, 208.667)

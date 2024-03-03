@@ -6,8 +6,12 @@ extends Node2D
 @onready var box=$Control
 @onready var global=get_node("/root/Global")
 
+const DEFAULT_TEXT = "A tent provides valuable shelter and can be set up in minutes."
+
+var tent_status = "Unfinished Tent"
+
 func _ready():
-	tip.text="Build dat bitch"
+	tip.text=DEFAULT_TEXT
 
 func _on_long_pole_area_entered(_area):
 	if tent_sprite.animation == "laid":
@@ -97,77 +101,101 @@ func _on_stake_4_area_entered(_area):
 		call_deferred("tent_complete")
 
 func tent_complete():
+	tent_status = "Completed Tent"
+	label.text = tent_status
 	global.tent_completed=true
+	tip.text="Great work!"
+	await get_tree().create_timer(3).timeout
 	get_tree().change_scene_to_file("res://assets/UI/LevelSelect.tscn")
 
 func _on_long_pole_mouse_entered():
 	box.visible=true
 	label.text="long pole"
+	tip.text="This pole supports an end of the tent."
 func _on_long_pole_2_mouse_entered():
 	box.visible=true
 	label.text="long pole"
+	tip.text="This pole supports an end of the tent."
 func _on_short_pole_mouse_entered():
 	box.visible=true
 	label.text="short pole"
+	tip.text="This pole goes on the top of the tent."
 func _on_stick_mouse_entered():
 	box.visible=true
 	label.text="stick"
+	tip.text="This stick could prop something open."
 func _on_rain_fly_mouse_entered():
 	box.visible=true
 	label.text="rain fly"
+	tip.text="The rain fly will protect your tent from rain and other weather."
 func _on_stake_mouse_entered():
 	box.visible=true
 	label.text="stake"
+	tip.text="Stakes will secure your tent to the ground so you can't lose it."
 func _on_stake_2_mouse_entered():
 	box.visible=true
 	label.text="stake"
+	tip.text="Stakes will secure your tent to the ground so you can't lose it."
 func _on_stake_3_mouse_entered():
 	box.visible=true
 	label.text="stake"
+	tip.text="Stakes will secure your tent to the ground so you can't lose it."
 func _on_stake_4_mouse_entered():
 	box.visible=true
 	label.text="stake"
+	tip.text="Stakes will secure your tent to the ground so you can't lose it."
 func _on_unbuilt_tent_mouse_entered():
 	box.visible=true
-	label.text="unfinished tent"
+	label.text=tent_status
 
 
 
 func _on_unbuilt_tent_mouse_exited():
 	box.visible=false
+	if tent_status == "Unfinished Tent":
+		tip.text=DEFAULT_TEXT
 
 
 func _on_long_pole_mouse_exited():
 	box.visible=false
+	tip.text=DEFAULT_TEXT
 
 
 func _on_long_pole_2_mouse_exited():
 	box.visible=false
+	tip.text=DEFAULT_TEXT
 
 
 func _on_short_pole_mouse_exited():
 	box.visible=false
+	tip.text=DEFAULT_TEXT
 
 
 func _on_stick_mouse_exited():
 	box.visible=false
+	tip.text=DEFAULT_TEXT
 
 
 func _on_rain_fly_mouse_exited():
 	box.visible=false
+	tip.text=DEFAULT_TEXT
 
 
 func _on_stake_mouse_exited():
 	box.visible=false
+	tip.text=DEFAULT_TEXT
 
 
 func _on_stake_2_mouse_exited():
 	box.visible=false
+	tip.text=DEFAULT_TEXT
 
 
 func _on_stake_3_mouse_exited():
 	box.visible=false
+	tip.text=DEFAULT_TEXT
 
 
 func _on_stake_4_mouse_exited():
 	box.visible=false
+	tip.text=DEFAULT_TEXT
