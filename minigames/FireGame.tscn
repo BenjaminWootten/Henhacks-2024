@@ -1,30 +1,57 @@
-[gd_scene load_steps=11 format=3 uid="uid://inbr3kmp16dx"]
+[gd_scene load_steps=19 format=3 uid="uid://inbr3kmp16dx"]
 
+[ext_resource type="Script" path="res://minigames/FireGame.gd" id="1_1mx15"]
+[ext_resource type="Texture2D" uid="uid://g0mgu30fyfsw" path="res://assets/minigames/fire/rock_ring_birds_nest.png" id="1_efhom"]
 [ext_resource type="PackedScene" uid="uid://dyo1photquadc" path="res://utility/draggable_object.tscn" id="1_ppbyw"]
 [ext_resource type="Texture2D" uid="uid://btdy65i03mlpc" path="res://assets/minigames/fire/fuel.png" id="2_ojy2e"]
+[ext_resource type="Texture2D" uid="uid://dwq35o2nyas24" path="res://assets/minigames/fire/rock_ring_kindling.png" id="3_q1fmh"]
 [ext_resource type="Texture2D" uid="uid://d2086s0g85d0s" path="res://assets/minigames/fire/rockring.png" id="3_tmekh"]
-[ext_resource type="Texture2D" uid="uid://b434tjjb2jnwa" path="res://assets/minigames/fire/rock1.png" id="4_6a56n"]
-[ext_resource type="Texture2D" uid="uid://bl0uvuxsft1i4" path="res://assets/minigames/fire/rock2.png" id="5_k12cm"]
-[ext_resource type="Texture2D" uid="uid://dsat7xljll0oj" path="res://assets/minigames/fire/rock3.png" id="6_ucbqs"]
-[ext_resource type="PackedScene" uid="uid://df10wyvwcyaao" path="res://utility/tip.tscn" id="7_dg5sc"]
+[ext_resource type="Texture2D" uid="uid://ccqm6r2eilkn0" path="res://assets/minigames/fire/rock_ring_logs.png" id="4_3xwse"]
+[ext_resource type="Texture2D" uid="uid://6hha2n8ceo50" path="res://assets/minigames/fire/rock_ring_tinder.png" id="5_sce6c"]
+[ext_resource type="Texture2D" uid="uid://e58xmo1a7lwe" path="res://assets/minigames/fire/kindling.png" id="7_udvks"]
+[ext_resource type="Texture2D" uid="uid://bfda051y2tad4" path="res://assets/minigames/fire/tinder.png" id="9_6j1ne"]
+[ext_resource type="Texture2D" uid="uid://t11tf6v1eorg" path="res://assets/minigames/fire/birds_nest.png" id="10_t2ji1"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_82cm6"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_tmekh")
-}, {
-"duration": 1.0,
-"texture": ExtResource("4_6a56n")
-}, {
-"duration": 1.0,
-"texture": ExtResource("5_k12cm")
-}, {
-"duration": 1.0,
-"texture": ExtResource("6_ucbqs")
+"texture": ExtResource("1_efhom")
 }],
 "loop": true,
-"name": &"default",
+"name": &"birds_nest",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_tmekh")
+}],
+"loop": true,
+"name": &"empty",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_q1fmh")
+}],
+"loop": true,
+"name": &"kindling",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_3xwse")
+}],
+"loop": true,
+"name": &"log",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_sce6c")
+}],
+"loop": true,
+"name": &"tinder",
 "speed": 5.0
 }]
 
@@ -34,28 +61,91 @@ radius = 91.1373
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0i7w0"]
 size = Vector2(140, 145)
 
-[node name="Node2D" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oi74k"]
+size = Vector2(104, 155)
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6hptl"]
+size = Vector2(60, 110)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ckxrr"]
+size = Vector2(52, 48)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oe3dd"]
+
+[node name="FireGame" type="Node2D"]
+script = ExtResource("1_1mx15")
+
+[node name="firePit" type="StaticBody2D" parent="."]
 position = Vector2(23, 31)
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="StaticBody2D"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="firePit"]
 position = Vector2(311, 294)
 scale = Vector2(6, 6)
 sprite_frames = SubResource("SpriteFrames_82cm6")
+animation = &"empty"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="firePit"]
 position = Vector2(314, 298)
 shape = SubResource("CircleShape2D_scexj")
 
-[node name="draggable_object" parent="." instance=ExtResource("1_ppbyw")]
-position = Vector2(800, 200)
+[node name="log" parent="." instance=ExtResource("1_ppbyw")]
+position = Vector2(991, 378)
+collision_layer = 2
 
-[node name="Sprite2D" type="Sprite2D" parent="draggable_object"]
+[node name="Sprite2D" type="Sprite2D" parent="log"]
 scale = Vector2(5, 5)
 texture = ExtResource("2_ojy2e")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="draggable_object"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="log"]
 shape = SubResource("RectangleShape2D_0i7w0")
 
-[node name="Control" parent="draggable_object" instance=ExtResource("7_dg5sc")]
+[node name="kindling" parent="." instance=ExtResource("1_ppbyw")]
+position = Vector2(822, 211)
+collision_layer = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="kindling"]
+scale = Vector2(5, 5)
+texture = ExtResource("7_udvks")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="kindling"]
+position = Vector2(-20, 0.5)
+shape = SubResource("RectangleShape2D_oi74k")
+
+[node name="tinder" parent="." instance=ExtResource("1_ppbyw")]
+position = Vector2(808, 387)
+collision_layer = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="tinder"]
+scale = Vector2(4, 4)
+texture = ExtResource("9_6j1ne")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="tinder"]
+position = Vector2(-6, 1)
+shape = SubResource("RectangleShape2D_6hptl")
+
+[node name="birdNest" parent="." instance=ExtResource("1_ppbyw")]
+position = Vector2(983, 197)
+collision_layer = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="birdNest"]
+scale = Vector2(4, 4)
+texture = ExtResource("10_t2ji1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="birdNest"]
+position = Vector2(-6, -5)
+shape = SubResource("RectangleShape2D_ckxrr")
+
+[node name="flintAndSteel" parent="." instance=ExtResource("1_ppbyw")]
+position = Vector2(166, 147)
+collision_layer = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="flintAndSteel"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="flintAndSteel"]
+shape = SubResource("RectangleShape2D_oe3dd")
+
+[connection signal="body_entered" from="log" to="." method="_on_log_body_entered"]
+[connection signal="body_entered" from="kindling" to="." method="_on_kindling_body_entered"]
+[connection signal="body_entered" from="tinder" to="." method="_on_tinder_body_entered"]
+[connection signal="body_entered" from="birdNest" to="." method="_on_bird_nest_body_entered"]
+[connection signal="body_entered" from="flintAndSteel" to="." method="_on_flint_and_steel_body_entered"]
