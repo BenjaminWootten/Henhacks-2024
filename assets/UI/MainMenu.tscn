@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cynjmvueo4jge"]
+[gd_scene load_steps=16 format=3 uid="uid://cynjmvueo4jge"]
 
 [ext_resource type="Script" path="res://MainMenu.gd" id="1_j3tm6"]
 [ext_resource type="Texture2D" uid="uid://3sn88ugna6l4" path="res://assets/mmparallax/sky.png" id="2_bpfku"]
@@ -8,7 +8,30 @@
 [ext_resource type="Script" path="res://assets/UI/ParallaxLayer2.gd" id="6_i8rg6"]
 [ext_resource type="Texture2D" uid="uid://db4h53km1ejes" path="res://assets/mmparallax/cloud.png" id="7_853ja"]
 [ext_resource type="FontFile" uid="uid://dkh5qd2vbmivp" path="res://assets/UI/Notepen.ttf" id="8_ml1qp"]
-[ext_resource type="PackedScene" uid="uid://6idr7pifkhno" path="res://assets/UI/LevelSelect.tscn" id="9_ghaku"]
+[ext_resource type="Texture2D" uid="uid://v3535ehhmcla" path="res://assets/tiles/Untitled.png" id="9_qt1pg"]
+[ext_resource type="Texture2D" uid="uid://dqwq2h0ebca47" path="res://assets/campsite/tent.png" id="10_qptqq"]
+[ext_resource type="Texture2D" uid="uid://m8atkcui0vp1" path="res://assets/UI/notepad.png" id="11_xy3wv"]
+[ext_resource type="Script" path="res://assets/UI/Notepad.gd" id="12_cvc78"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q2pse"]
+texture = ExtResource("9_qt1pg")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+8:0/0 = 0
+9:0/0 = 0
+10:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_2tm32"]
+terrain_set_0/mode = 0
+sources/1 = SubResource("TileSetAtlasSource_q2pse")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j4dcd"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -92,10 +115,107 @@ theme_override_fonts/font = ExtResource("8_ml1qp")
 theme_override_font_sizes/font_size = 30
 text = "Quit"
 
-[node name="Ground" parent="." instance=ExtResource("9_ghaku")]
-layout_mode = 1
-offset_top = 755.0
-offset_right = -4.0
-offset_bottom = 220.0
+[node name="Ground" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TileMap" type="TileMap" parent="Ground"]
+position = Vector2(0, 756)
+tile_set = SubResource("TileSet_2tm32")
+format = 2
+layer_0/tile_data = PackedInt32Array(0, 393217, 0, 1, 458753, 0, 2, 458753, 0, 3, 458753, 0, 4, 458753, 0, 5, 458753, 0, 6, 458753, 0, 7, 458753, 0, 8, 458753, 0, 9, 458753, 0, 10, 458753, 0, 11, 458753, 0, 65536, 589825, 0, 65537, 327681, 0, 65538, 327681, 0, 65539, 327681, 0, 65540, 327681, 0, 65541, 327681, 0, 65542, 327681, 0, 65543, 327681, 0, 65544, 327681, 0, 65545, 327681, 0, 65546, 327681, 0, 65547, 327681, 0, 12, 458753, 0, 13, 458753, 0, 14, 458753, 0, 15, 458753, 0, 16, 458753, 0, 17, 458753, 0, 18, 458753, 0, 19, 458753, 0, 20, 458753, 0, 21, 458753, 0, 22, 458753, 0, 23, 458753, 0, 65548, 327681, 0, 65549, 327681, 0, 65550, 327681, 0, 65551, 327681, 0, 65552, 327681, 0, 65553, 327681, 0, 65554, 327681, 0, 65555, 327681, 0, 65556, 327681, 0, 65557, 327681, 0, 65558, 327681, 0, 65559, 327681, 0, 131072, 589825, 0, 131073, 327681, 0, 131074, 327681, 0, 131075, 327681, 0, 131076, 327681, 0, 131077, 327681, 0, 131078, 327681, 0, 131079, 327681, 0, 131080, 327681, 0, 131081, 327681, 0, 131082, 327681, 0, 131083, 327681, 0, 131084, 327681, 0, 131085, 327681, 0, 131086, 327681, 0, 131087, 327681, 0, 131088, 327681, 0, 131089, 327681, 0, 131090, 327681, 0, 131091, 327681, 0, 131092, 327681, 0, 131093, 327681, 0, 131094, 327681, 0, 131095, 327681, 0, 196608, 589825, 0, 196609, 327681, 0, 196610, 327681, 0, 196611, 327681, 0, 196612, 327681, 0, 196613, 327681, 0, 196614, 327681, 0, 196615, 327681, 0, 196616, 327681, 0, 196617, 327681, 0, 196618, 327681, 0, 196619, 327681, 0, 196620, 327681, 0, 196621, 327681, 0, 196622, 327681, 0, 196623, 327681, 0, 196624, 327681, 0, 196625, 327681, 0, 196626, 327681, 0, 196627, 327681, 0, 196628, 327681, 0, 196629, 327681, 0, 196630, 327681, 0, 196631, 327681, 0, 262144, 589825, 0, 262145, 327681, 0, 262146, 327681, 0, 262147, 327681, 0, 262148, 327681, 0, 262149, 327681, 0, 262150, 327681, 0, 262151, 327681, 0, 262152, 327681, 0, 262153, 327681, 0, 262154, 327681, 0, 262155, 327681, 0, 262156, 327681, 0, 262157, 327681, 0, 262158, 327681, 0, 262159, 327681, 0, 262160, 327681, 0, 262161, 327681, 0, 262162, 327681, 0, 262163, 327681, 0, 262164, 327681, 0, 262165, 327681, 0, 262166, 327681, 0, 262167, 327681, 0, 327680, 589825, 0, 327681, 327681, 0, 327682, 327681, 0, 327683, 327681, 0, 327684, 327681, 0, 327685, 327681, 0, 327686, 327681, 0, 327687, 327681, 0, 327688, 327681, 0, 327689, 327681, 0, 327690, 327681, 0, 327691, 327681, 0, 327692, 327681, 0, 327693, 327681, 0, 327694, 327681, 0, 327695, 327681, 0, 327696, 327681, 0, 327697, 327681, 0, 327698, 327681, 0, 327699, 327681, 0, 327700, 327681, 0, 327701, 327681, 0, 327702, 327681, 0, 327703, 327681, 0, 393216, 589825, 0, 393217, 327681, 0, 393218, 327681, 0, 393219, 327681, 0, 393220, 327681, 0, 393221, 327681, 0, 393222, 327681, 0, 393223, 327681, 0, 393224, 327681, 0, 393225, 327681, 0, 393226, 327681, 0, 393227, 327681, 0, 393228, 327681, 0, 393229, 327681, 0, 393230, 327681, 0, 393231, 327681, 0, 393232, 327681, 0, 393233, 327681, 0, 393234, 327681, 0, 393235, 327681, 0, 393236, 327681, 0, 393237, 327681, 0, 393238, 327681, 0, 393239, 327681, 0, 24, 458753, 0, 393240, 327681, 0, 327704, 327681, 0, 262168, 327681, 0, 196632, 327681, 0, 65560, 327681, 0, 131096, 327681, 0, 25, 458753, 0, 26, 458753, 0, 27, 458753, 0, 28, 458753, 0, 29, 458753, 0, 30, 458753, 0, 31, 458753, 0, 32, 458753, 0, 33, 458753, 0, 34, 458753, 0, 35, 458753, 0, 36, 458753, 0, 37, 458753, 0, 38, 458753, 0, 39, 458753, 0, 40, 458753, 0, 41, 458753, 0, 42, 458753, 0, 43, 458753, 0, 44, 458753, 0, 45, 458753, 0, 46, 458753, 0, 47, 458753, 0, 48, 458753, 0, 49, 458753, 0, 50, 458753, 0, 51, 458753, 0, 52, 458753, 0, 53, 458753, 0, 54, 458753, 0, 55, 458753, 0, 56, 458753, 0, 57, 458753, 0, 58, 458753, 0, 131097, 327681, 0, 65561, 327681, 0, 65562, 327681, 0, 131098, 327681, 0, 196634, 327681, 0, 196633, 327681, 0, 262169, 327681, 0, 327705, 327681, 0, 393241, 327681, 0, 393242, 327681, 0, 327706, 327681, 0, 262170, 327681, 0, 262171, 327681, 0, 196635, 327681, 0, 131099, 327681, 0, 65563, 327681, 0, 65564, 327681, 0, 131100, 327681, 0, 196636, 327681, 0, 262172, 327681, 0, 327708, 327681, 0, 327707, 327681, 0, 393243, 327681, 0, 393244, 327681, 0, 393245, 327681, 0, 327709, 327681, 0, 262173, 327681, 0, 196637, 327681, 0, 131101, 327681, 0, 65565, 327681, 0, 65566, 327681, 0, 131102, 327681, 0, 196638, 327681, 0, 262174, 327681, 0, 327710, 327681, 0, 393246, 327681, 0, 393247, 327681, 0, 327711, 327681, 0, 262175, 327681, 0, 196639, 327681, 0, 131103, 327681, 0, 65567, 327681, 0, 65568, 327681, 0, 131104, 327681, 0, 196640, 327681, 0, 262176, 327681, 0, 327712, 327681, 0, 393248, 327681, 0, 393249, 327681, 0, 327713, 327681, 0, 262177, 327681, 0, 196641, 327681, 0, 131105, 327681, 0, 65569, 327681, 0, 65570, 327681, 0, 131106, 327681, 0, 196642, 327681, 0, 262178, 327681, 0, 327714, 327681, 0, 393250, 327681, 0, 393251, 327681, 0, 327715, 327681, 0, 262179, 327681, 0, 196643, 327681, 0, 131107, 327681, 0, 65571, 327681, 0, 65572, 327681, 0, 131108, 327681, 0, 196644, 327681, 0, 262180, 327681, 0, 327716, 327681, 0, 393252, 327681, 0, 393253, 327681, 0, 327717, 327681, 0, 262181, 327681, 0, 196645, 327681, 0, 131109, 327681, 0, 65573, 327681, 0, 65574, 327681, 0, 131110, 327681, 0, 196646, 327681, 0, 262182, 327681, 0, 327718, 327681, 0, 393254, 327681, 0, 393255, 327681, 0, 327719, 327681, 0, 262183, 327681, 0, 196647, 327681, 0, 131111, 327681, 0, 65575, 327681, 0, 65576, 327681, 0, 131112, 327681, 0, 196648, 327681, 0, 262184, 327681, 0, 327720, 327681, 0, 393256, 327681, 0, 393257, 327681, 0, 327721, 327681, 0, 262185, 327681, 0, 196649, 327681, 0, 131113, 327681, 0, 65577, 327681, 0, 65578, 327681, 0, 131114, 327681, 0, 196650, 327681, 0, 262186, 327681, 0, 327722, 327681, 0, 393258, 327681, 0, 393259, 327681, 0, 327723, 327681, 0, 262187, 327681, 0, 196651, 327681, 0, 131115, 327681, 0, 65579, 327681, 0, 65580, 327681, 0, 131116, 327681, 0, 196652, 327681, 0, 262188, 327681, 0, 327724, 327681, 0, 393260, 327681, 0, 393261, 327681, 0, 327725, 327681, 0, 262189, 327681, 0, 196653, 327681, 0, 131117, 327681, 0, 65581, 327681, 0, 65582, 327681, 0, 131118, 327681, 0, 196654, 327681, 0, 262190, 327681, 0, 327726, 327681, 0, 393262, 327681, 0, 393263, 327681, 0, 327727, 327681, 0, 262191, 327681, 0, 196655, 327681, 0, 131119, 327681, 0, 65583, 327681, 0, 65584, 327681, 0, 131120, 327681, 0, 196656, 327681, 0, 262192, 327681, 0, 327728, 327681, 0, 393264, 327681, 0, 393265, 327681, 0, 327729, 327681, 0, 262193, 327681, 0, 196657, 327681, 0, 131121, 327681, 0, 65585, 327681, 0, 65586, 327681, 0, 131122, 327681, 0, 196658, 327681, 0, 262194, 327681, 0, 327730, 327681, 0, 393266, 327681, 0, 393267, 327681, 0, 327731, 327681, 0, 262195, 327681, 0, 196659, 327681, 0, 131123, 327681, 0, 65587, 327681, 0, 65588, 327681, 0, 131124, 327681, 0, 196660, 327681, 0, 262196, 327681, 0, 327732, 327681, 0, 393268, 327681, 0, 393269, 327681, 0, 327733, 327681, 0, 262197, 327681, 0, 196661, 327681, 0, 131125, 327681, 0, 65589, 327681, 0, 65590, 327681, 0, 131126, 327681, 0, 196662, 327681, 0, 262198, 327681, 0, 327734, 327681, 0, 393270, 327681, 0, 393271, 327681, 0, 327735, 327681, 0, 262199, 327681, 0, 196663, 327681, 0, 131127, 327681, 0, 65591, 327681, 0, 65592, 327681, 0, 131128, 327681, 0, 196664, 327681, 0, 262200, 327681, 0, 327736, 327681, 0, 393272, 327681, 0, 393273, 327681, 0, 327737, 327681, 0, 262201, 327681, 0, 196665, 327681, 0, 131129, 327681, 0, 65593, 327681, 0, 65594, 327681, 0, 131130, 327681, 0, 196666, 327681, 0, 262202, 327681, 0, 327738, 327681, 0, 393274, 327681, 0, 59, 458753, 0, 60, 458753, 0, 61, 458753, 0, 62, 458753, 0, 63, 458753, 0, 64, 458753, 0, 65, 458753, 0, 66, 458753, 0, 67, 458753, 0, 68, 458753, 0, 69, 458753, 0, 70, 458753, 0, 71, 524289, 0, 196668, 327681, 0, 131132, 327681, 0, 65596, 327681, 0, 65595, 327681, 0, 131131, 327681, 0, 196667, 327681, 0, 262203, 327681, 0, 327739, 327681, 0, 393275, 327681, 0, 393276, 327681, 0, 327740, 327681, 0, 262204, 327681, 0, 262205, 327681, 0, 196669, 327681, 0, 131133, 327681, 0, 65597, 327681, 0, 65598, 327681, 0, 131134, 327681, 0, 196670, 327681, 0, 262206, 327681, 0, 327742, 327681, 0, 327741, 327681, 0, 393277, 327681, 0, 393278, 327681, 0, 393279, 327681, 0, 327743, 327681, 0, 262207, 327681, 0, 196671, 327681, 0, 131135, 327681, 0, 65599, 327681, 0, 65600, 327681, 0, 131136, 327681, 0, 196672, 327681, 0, 262208, 327681, 0, 327744, 327681, 0, 393280, 327681, 0, 393281, 327681, 0, 327745, 327681, 0, 262209, 327681, 0, 196673, 327681, 0, 131137, 327681, 0, 65601, 327681, 0, 65602, 327681, 0, 131138, 327681, 0, 196674, 327681, 0, 262210, 327681, 0, 327746, 327681, 0, 393282, 327681, 0, 393283, 327681, 0, 327747, 327681, 0, 262211, 327681, 0, 196675, 327681, 0, 131139, 327681, 0, 65603, 327681, 0, 65604, 327681, 0, 131140, 327681, 0, 196676, 327681, 0, 262212, 327681, 0, 327748, 327681, 0, 393284, 327681, 0, 393285, 327681, 0, 327749, 327681, 0, 262213, 327681, 0, 196677, 327681, 0, 131141, 327681, 0, 65605, 327681, 0, 65606, 327681, 0, 131142, 327681, 0, 196678, 327681, 0, 262214, 327681, 0, 327750, 327681, 0, 393286, 327681, 0, 393287, 131073, 0, 327751, 131073, 0, 262215, 131073, 0, 196679, 131073, 0, 131143, 131073, 0, 65607, 131073, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Ground"]
+position = Vector2(578, 726)
+scale = Vector2(4, 4)
+texture = ExtResource("10_qptqq")
+
+[node name="Notepad" type="Sprite2D" parent="Ground"]
+position = Vector2(914, 1079)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("11_xy3wv")
+script = ExtResource("12_cvc78")
+
+[node name="WaterButton" type="Button" parent="Ground/Notepad"]
+offset_left = -107.5
+offset_top = -186.25
+offset_right = 20.5
+offset_bottom = -155.25
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("8_ml1qp")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxEmpty_j4dcd")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_j4dcd")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_j4dcd")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_j4dcd")
+text = "Filter Water"
+metadata/_edit_use_anchors_ = true
+
+[node name="FireButton" type="Button" parent="Ground/Notepad"]
+offset_left = -122.5
+offset_top = -131.25
+offset_right = 5.50002
+offset_bottom = -100.25
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("8_ml1qp")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxEmpty_j4dcd")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_j4dcd")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_j4dcd")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_j4dcd")
+text = "Make Fire"
+metadata/_edit_use_anchors_ = true
+
+[node name="CompassButton" type="Button" parent="Ground/Notepad"]
+offset_left = -112.5
+offset_top = -71.25
+offset_right = 43.5
+offset_bottom = -40.25
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("8_ml1qp")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxEmpty_j4dcd")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_j4dcd")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_j4dcd")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_j4dcd")
+text = "Orient Compass"
+metadata/_edit_use_anchors_ = true
 
 [connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Ground/Notepad/WaterButton" to="Ground/Notepad" method="_on_water_button_pressed"]
+[connection signal="pressed" from="Ground/Notepad/FireButton" to="Ground/Notepad" method="_on_fire_button_pressed"]
+[connection signal="pressed" from="Ground/Notepad/CompassButton" to="Ground/Notepad" method="_on_compass_button_pressed"]
