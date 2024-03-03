@@ -17,9 +17,9 @@ func _process(delta):
 	if grabmoss==true:
 		moss.position=get_local_mouse_position()
 	if grabsand==true:
-		moss.position=get_local_mouse_position()
+		sand.position=get_local_mouse_position()
 	if grabstone==true:
-		moss.position=get_local_mouse_position()
+		stone.position=get_local_mouse_position()
 
 func _on_bottle_input_event(viewport, event, shape_idx):
 	if event.is_action_pressed("click"):
