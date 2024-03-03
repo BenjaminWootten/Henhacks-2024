@@ -1,9 +1,11 @@
-[gd_scene load_steps=19 format=3 uid="uid://inbr3kmp16dx"]
+[gd_scene load_steps=35 format=3 uid="uid://inbr3kmp16dx"]
 
 [ext_resource type="Script" path="res://minigames/FireGame.gd" id="1_1mx15"]
 [ext_resource type="Texture2D" uid="uid://g0mgu30fyfsw" path="res://assets/minigames/fire/rock_ring_birds_nest.png" id="1_efhom"]
 [ext_resource type="PackedScene" uid="uid://dyo1photquadc" path="res://utility/draggable_object.tscn" id="1_ppbyw"]
+[ext_resource type="Texture2D" uid="uid://dw6yxedm2rp2r" path="res://assets/minigames/fire/burning_loop_1.png" id="2_fm5kg"]
 [ext_resource type="Texture2D" uid="uid://btdy65i03mlpc" path="res://assets/minigames/fire/fuel.png" id="2_ojy2e"]
+[ext_resource type="Texture2D" uid="uid://u1pbfkl8qr4l" path="res://assets/minigames/fire/burning_start_1.png" id="3_fc1fj"]
 [ext_resource type="Texture2D" uid="uid://dwq35o2nyas24" path="res://assets/minigames/fire/rock_ring_kindling.png" id="3_q1fmh"]
 [ext_resource type="Texture2D" uid="uid://d2086s0g85d0s" path="res://assets/minigames/fire/rockring.png" id="3_tmekh"]
 [ext_resource type="Texture2D" uid="uid://ccqm6r2eilkn0" path="res://assets/minigames/fire/rock_ring_logs.png" id="4_3xwse"]
@@ -11,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://e58xmo1a7lwe" path="res://assets/minigames/fire/kindling.png" id="7_udvks"]
 [ext_resource type="Texture2D" uid="uid://bfda051y2tad4" path="res://assets/minigames/fire/tinder.png" id="9_6j1ne"]
 [ext_resource type="Texture2D" uid="uid://t11tf6v1eorg" path="res://assets/minigames/fire/birds_nest.png" id="10_t2ji1"]
+[ext_resource type="Texture2D" uid="uid://v3535ehhmcla" path="res://assets/tiles/Untitled.png" id="14_2p860"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_82cm6"]
 animations = [{
@@ -58,6 +61,103 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_scexj"]
 radius = 91.1373
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_jmn5l"]
+atlas = ExtResource("2_fm5kg")
+region = Rect2(0, 0, 24, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n3fce"]
+atlas = ExtResource("2_fm5kg")
+region = Rect2(24, 0, 24, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_71veo"]
+atlas = ExtResource("2_fm5kg")
+region = Rect2(48, 0, 24, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g0ok5"]
+atlas = ExtResource("2_fm5kg")
+region = Rect2(72, 0, 24, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_83wa2"]
+atlas = ExtResource("2_fm5kg")
+region = Rect2(96, 0, 24, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5iwhb"]
+atlas = ExtResource("2_fm5kg")
+region = Rect2(120, 0, 24, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c7gmk"]
+atlas = ExtResource("2_fm5kg")
+region = Rect2(144, 0, 24, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0aamx"]
+atlas = ExtResource("2_fm5kg")
+region = Rect2(168, 0, 24, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wilu6"]
+atlas = ExtResource("3_fc1fj")
+region = Rect2(0, 0, 24, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ew2g0"]
+atlas = ExtResource("3_fc1fj")
+region = Rect2(24, 0, 24, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d1f04"]
+atlas = ExtResource("3_fc1fj")
+region = Rect2(48, 0, 24, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k3oax"]
+atlas = ExtResource("3_fc1fj")
+region = Rect2(72, 0, 24, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lp6l2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jmn5l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n3fce")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_71veo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g0ok5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_83wa2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5iwhb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c7gmk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0aamx")
+}],
+"loop": true,
+"name": &"fire_loop",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wilu6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ew2g0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d1f04")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k3oax")
+}],
+"loop": false,
+"name": &"fire_start",
+"speed": 5.0
+}]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0i7w0"]
 size = Vector2(140, 145)
 
@@ -71,22 +171,30 @@ size = Vector2(60, 110)
 size = Vector2(52, 48)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oe3dd"]
+size = Vector2(126, 28)
 
 [node name="FireGame" type="Node2D"]
 script = ExtResource("1_1mx15")
 
 [node name="firePit" type="StaticBody2D" parent="."]
-position = Vector2(23, 31)
+position = Vector2(233, 221)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="firePit"]
-position = Vector2(311, 294)
 scale = Vector2(6, 6)
 sprite_frames = SubResource("SpriteFrames_82cm6")
 animation = &"empty"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="firePit"]
-position = Vector2(314, 298)
 shape = SubResource("CircleShape2D_scexj")
+
+[node name="fire" type="AnimatedSprite2D" parent="firePit"]
+visible = false
+modulate = Color(1, 1, 1, 0.533333)
+position = Vector2(0, -20)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_lp6l2")
+animation = &"fire_start"
+speed_scale = 2.0
 
 [node name="log" parent="." instance=ExtResource("1_ppbyw")]
 position = Vector2(991, 378)
@@ -136,12 +244,14 @@ position = Vector2(-6, -5)
 shape = SubResource("RectangleShape2D_ckxrr")
 
 [node name="flintAndSteel" parent="." instance=ExtResource("1_ppbyw")]
-position = Vector2(166, 147)
+position = Vector2(85, 75)
 collision_layer = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="flintAndSteel"]
+texture = ExtResource("14_2p860")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="flintAndSteel"]
+position = Vector2(6, -4)
 shape = SubResource("RectangleShape2D_oe3dd")
 
 [connection signal="body_entered" from="log" to="." method="_on_log_body_entered"]
