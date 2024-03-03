@@ -1,3 +1,21 @@
-[gd_scene format=3 uid="uid://cxp7764ywa85m"]
+[gd_scene load_steps=4 format=3 uid="uid://cxp7764ywa85m"]
+
+[ext_resource type="Texture2D" uid="uid://607fw3u2r34t" path="res://assets/tiles/TX Tileset Grass.png" id="1_qyv02"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8mgkt"]
+resource_name = "grass"
+texture = ExtResource("1_qyv02")
+texture_region_size = Vector2i(128, 128)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_fma8d"]
+tile_size = Vector2i(128, 128)
+sources/0 = SubResource("TileSetAtlasSource_8mgkt")
 
 [node name="ground" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+scale = Vector2(4, 4)
+tile_set = SubResource("TileSet_fma8d")
+format = 2
+layer_0/tile_data = PackedInt32Array(0, 0, 0, 1, 0, 0, 2, 0, 0, 65538, 0, 0, 65537, 0, 0, 65536, 0, 0)
