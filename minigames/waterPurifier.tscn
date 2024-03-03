@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://cmw5628wtmehn"]
+[gd_scene load_steps=15 format=3 uid="uid://bb3ooprnwnq8j"]
 
 [ext_resource type="Script" path="res://minigames/waterPurifier.gd" id="1_a7yem"]
 [ext_resource type="Texture2D" uid="uid://72xji8xyexd2" path="res://assets/minigames/water purifier/bottle.png" id="2_xj07t"]
@@ -70,6 +70,11 @@ shape = SubResource("CapsuleShape2D_e777j")
 scale = Vector2(6, 6)
 texture = ExtResource("7_h6jnw")
 
+[node name="Label" type="Label" parent="moss"]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "moss"
+
 [node name="sand" parent="." instance=ExtResource("6_4uu51")]
 position = Vector2(631, 399)
 collision_layer = 2
@@ -82,6 +87,11 @@ shape = SubResource("CircleShape2D_kjmyx")
 scale = Vector2(6, 6)
 texture = ExtResource("8_23emf")
 
+[node name="Label" type="Label" parent="sand"]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "sand"
+
 [node name="stone" parent="." instance=ExtResource("6_4uu51")]
 position = Vector2(624, 117)
 collision_layer = 2
@@ -93,6 +103,12 @@ texture = ExtResource("9_c1whs")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="stone"]
 scale = Vector2(4.08001, 4.08001)
 shape = SubResource("CircleShape2D_he26c")
+
+[node name="Label" type="Label" parent="stone"]
+offset_right = 40.0
+offset_bottom = 23.0
+rotation = 0.0189769
+text = "stone"
 
 [connection signal="area_entered" from="bottle" to="." method="_on_bottle_area_entered"]
 [connection signal="area_entered" from="bottle" to="bottle" method="_on_area_entered"]
