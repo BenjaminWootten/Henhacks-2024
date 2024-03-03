@@ -3,8 +3,8 @@
 [ext_resource type="Texture2D" uid="uid://v3535ehhmcla" path="res://assets/tiles/Untitled.png" id="1_lmxsb"]
 [ext_resource type="Texture2D" uid="uid://bpxo6ivcc1h8v" path="res://assets/campsite/tent_dark.png" id="2_oxg0d"]
 [ext_resource type="Texture2D" uid="uid://m8atkcui0vp1" path="res://assets/UI/notepad.png" id="3_25rel"]
+[ext_resource type="Script" path="res://assets/UI/Notepad.gd" id="4_ooibg"]
 [ext_resource type="FontFile" uid="uid://dkh5qd2vbmivp" path="res://assets/UI/Notepen.ttf" id="4_srkwc"]
-[ext_resource type="Script" path="res://assets/UI/FireButton.gd" id="5_0ipbf"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_o8erh"]
 texture = ExtResource("1_lmxsb")
@@ -48,8 +48,9 @@ texture = ExtResource("2_oxg0d")
 position = Vector2(914, 323)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("3_25rel")
+script = ExtResource("4_ooibg")
 
-[node name="Button" type="Button" parent="Notepad"]
+[node name="WaterButton" type="Button" parent="Notepad"]
 offset_left = -107.5
 offset_top = -186.25
 offset_right = 20.5
@@ -98,9 +99,8 @@ theme_override_styles/pressed = SubResource("StyleBoxEmpty_ebknh")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_ebknh")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_ebknh")
 text = "Make Fire"
-script = ExtResource("5_0ipbf")
 
-[node name="Button3" type="Button" parent="Notepad"]
+[node name="CompassButton" type="Button" parent="Notepad"]
 offset_left = -112.5
 offset_top = -71.25
 offset_right = 43.5
@@ -125,4 +125,6 @@ theme_override_styles/disabled = SubResource("StyleBoxEmpty_ebknh")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_ebknh")
 text = "Orient Compass"
 
-[connection signal="pressed" from="Notepad/FireButton" to="Notepad/FireButton" method="_on_pressed"]
+[connection signal="pressed" from="Notepad/WaterButton" to="Notepad" method="_on_water_button_pressed"]
+[connection signal="pressed" from="Notepad/FireButton" to="Notepad" method="_on_fire_button_pressed"]
+[connection signal="pressed" from="Notepad/CompassButton" to="Notepad" method="_on_compass_button_pressed"]
