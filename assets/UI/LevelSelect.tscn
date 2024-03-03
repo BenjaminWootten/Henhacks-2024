@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://6idr7pifkhno"]
+[gd_scene load_steps=9 format=3 uid="uid://6idr7pifkhno"]
 
 [ext_resource type="Texture2D" uid="uid://v3535ehhmcla" path="res://assets/tiles/Untitled.png" id="1_lmxsb"]
 [ext_resource type="Texture2D" uid="uid://bpxo6ivcc1h8v" path="res://assets/campsite/tent_dark.png" id="2_oxg0d"]
 [ext_resource type="Texture2D" uid="uid://m8atkcui0vp1" path="res://assets/UI/notepad.png" id="3_25rel"]
 [ext_resource type="FontFile" uid="uid://dkh5qd2vbmivp" path="res://assets/UI/Notepen.ttf" id="4_srkwc"]
+[ext_resource type="Script" path="res://assets/UI/FireButton.gd" id="5_0ipbf"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_o8erh"]
 texture = ExtResource("1_lmxsb")
@@ -25,14 +26,13 @@ sources/11 = SubResource("TileSetAtlasSource_o8erh")
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ebknh"]
 
-[node name="Control" type="Control"]
+[node name="Control2" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-mouse_filter = 2
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_wu8nh")
@@ -74,7 +74,7 @@ theme_override_styles/disabled = SubResource("StyleBoxEmpty_ebknh")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_ebknh")
 text = "Filter Water"
 
-[node name="Button2" type="Button" parent="Notepad"]
+[node name="FireButton" type="Button" parent="Notepad"]
 offset_left = -122.5
 offset_top = -131.25
 offset_right = 5.50002
@@ -98,6 +98,7 @@ theme_override_styles/pressed = SubResource("StyleBoxEmpty_ebknh")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_ebknh")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_ebknh")
 text = "Make Fire"
+script = ExtResource("5_0ipbf")
 
 [node name="Button3" type="Button" parent="Notepad"]
 offset_left = -112.5
@@ -124,28 +125,4 @@ theme_override_styles/disabled = SubResource("StyleBoxEmpty_ebknh")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_ebknh")
 text = "Orient Compass"
 
-[node name="Button4" type="Button" parent="Notepad"]
-offset_left = -112.0
-offset_top = -16.0
-offset_right = 4.0
-offset_bottom = 15.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("4_srkwc")
-theme_override_font_sizes/font_size = 30
-theme_override_styles/normal = SubResource("StyleBoxEmpty_ebknh")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_ebknh")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_ebknh")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_ebknh")
-text = "Pitch Tent"
-alignment = 0
+[connection signal="pressed" from="Notepad/FireButton" to="Notepad/FireButton" method="_on_pressed"]
