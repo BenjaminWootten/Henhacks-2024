@@ -1,0 +1,260 @@
+[gd_scene load_steps=25 format=3 uid="uid://d3gfoe87v2cuk"]
+
+[ext_resource type="Texture2D" uid="uid://c0jtquhbuga5b" path="res://assets/minigames/tent/tent_laid.png" id="1_jscna"]
+[ext_resource type="Texture2D" uid="uid://bn0wr48lahgiv" path="res://assets/minigames/tent/tent_back_built.png" id="1_ps7fy"]
+[ext_resource type="Script" path="res://minigames/tent.gd" id="1_vw6ua"]
+[ext_resource type="Texture2D" uid="uid://buivwxwx6vhqk" path="res://assets/minigames/tent/tent_dark_window_closed.png" id="2_joeqn"]
+[ext_resource type="PackedScene" uid="uid://dyo1photquadc" path="res://utility/draggable_object.tscn" id="2_tvp78"]
+[ext_resource type="Texture2D" uid="uid://bn7uakai6xshf" path="res://assets/minigames/tent/tent_pole_long.png" id="3_1i26n"]
+[ext_resource type="Texture2D" uid="uid://du27l4i134m0u" path="res://assets/minigames/tent/tent_front_built.png" id="3_k4jo3"]
+[ext_resource type="Texture2D" uid="uid://dnu63502ui0mh" path="res://assets/minigames/tent/tent_droopy.png" id="4_mnqxk"]
+[ext_resource type="Texture2D" uid="uid://bq4sawpl1gvob" path="res://assets/minigames/tent/tent_pole_short.png" id="4_sku08"]
+[ext_resource type="Texture2D" uid="uid://1t4pxi30yda1" path="res://assets/minigames/tent/tent_dark_rain_fly.png" id="5_1rx60"]
+[ext_resource type="Texture2D" uid="uid://mwfdphix6p8m" path="res://assets/minigames/tent/tent_stake1.png" id="8_gl66n"]
+[ext_resource type="Texture2D" uid="uid://f2yahvofl1m1" path="res://assets/minigames/tent/stick.png" id="9_0g0es"]
+[ext_resource type="Texture2D" uid="uid://b12sspnmfrf0b" path="res://assets/minigames/tent/rain_fly.png" id="9_17gx3"]
+[ext_resource type="Texture2D" uid="uid://caumu0ipxfbwk" path="res://assets/minigames/tent/tent_stake2.png" id="9_t2kfd"]
+[ext_resource type="Texture2D" uid="uid://d34cpd2pace8o" path="res://assets/minigames/tent/tent_stake.png" id="10_j8bht"]
+[ext_resource type="Texture2D" uid="uid://cgu6rf85hxnyp" path="res://assets/minigames/tent/tent_stake3.png" id="10_qphl8"]
+[ext_resource type="Texture2D" uid="uid://bpxo6ivcc1h8v" path="res://assets/minigames/tent/tent_dark.png" id="11_3ywef"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6sn8r"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_ps7fy")
+}],
+"loop": true,
+"name": &"back_built",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_joeqn")
+}],
+"loop": true,
+"name": &"built",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_mnqxk")
+}],
+"loop": true,
+"name": &"droopy",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_k4jo3")
+}],
+"loop": true,
+"name": &"front_built",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_jscna")
+}],
+"loop": true,
+"name": &"laid",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_1rx60")
+}],
+"loop": true,
+"name": &"rain_fly",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_gl66n")
+}],
+"loop": true,
+"name": &"stake_1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_t2kfd")
+}],
+"loop": true,
+"name": &"stake_2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_qphl8")
+}],
+"loop": true,
+"name": &"stake_3",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_3ywef")
+}],
+"loop": true,
+"name": &"window_open",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ttwcl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hp354"]
+size = Vector2(50.8334, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bhnie"]
+size = Vector2(110, 7.33331)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aew4p"]
+size = Vector2(12.6667, 34.6667)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dsxqn"]
+size = Vector2(134, 83)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8u5nb"]
+size = Vector2(15, 24.5)
+
+[node name="tent" type="Node2D"]
+scale = Vector2(1.5, 1.5)
+script = ExtResource("1_vw6ua")
+
+[node name="unbuilt_tent" type="Area2D" parent="."]
+position = Vector2(226, 208.667)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="unbuilt_tent"]
+scale = Vector2(5, 5)
+sprite_frames = SubResource("SpriteFrames_6sn8r")
+animation = &"stake_1"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="unbuilt_tent"]
+scale = Vector2(7.8, 7.8)
+shape = SubResource("RectangleShape2D_ttwcl")
+
+[node name="long_pole" parent="." instance=ExtResource("2_tvp78")]
+position = Vector2(524.333, 179.667)
+collision_layer = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="long_pole"]
+scale = Vector2(5, 5)
+texture = ExtResource("3_1i26n")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="long_pole"]
+position = Vector2(2.90002, 0)
+scale = Vector2(0.24, 7.96)
+shape = SubResource("RectangleShape2D_hp354")
+
+[node name="long_pole2" parent="." instance=ExtResource("2_tvp78")]
+position = Vector2(499.333, 179.667)
+collision_layer = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="long_pole2"]
+scale = Vector2(5, 5)
+texture = ExtResource("3_1i26n")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="long_pole2"]
+position = Vector2(2.79993, 0)
+scale = Vector2(0.24, 7.96)
+shape = SubResource("RectangleShape2D_hp354")
+
+[node name="short_pole" parent="." instance=ExtResource("2_tvp78")]
+position = Vector2(545.333, 180.667)
+rotation = 1.5708
+collision_layer = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="short_pole"]
+scale = Vector2(5, 5)
+texture = ExtResource("4_sku08")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="short_pole"]
+position = Vector2(25, -2.33331)
+shape = SubResource("RectangleShape2D_bhnie")
+
+[node name="stick" parent="." instance=ExtResource("2_tvp78")]
+position = Vector2(583.333, 126.667)
+collision_layer = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="stick"]
+scale = Vector2(5, 5)
+texture = ExtResource("9_0g0es")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="stick"]
+position = Vector2(-2.33337, -0.666634)
+shape = SubResource("RectangleShape2D_aew4p")
+
+[node name="rain_fly" parent="." instance=ExtResource("2_tvp78")]
+position = Vector2(516.333, 311.667)
+collision_layer = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="rain_fly"]
+scale = Vector2(5, 5)
+texture = ExtResource("9_17gx3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="rain_fly"]
+position = Vector2(12, -2.5)
+shape = SubResource("RectangleShape2D_dsxqn")
+
+[node name="stake" parent="." instance=ExtResource("2_tvp78")]
+position = Vector2(568.333, 202.667)
+collision_layer = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="stake"]
+position = Vector2(-1, -60)
+scale = Vector2(5, 5)
+texture = ExtResource("10_j8bht")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="stake"]
+position = Vector2(1.5, 7.75)
+shape = SubResource("RectangleShape2D_8u5nb")
+
+[node name="stake2" parent="." instance=ExtResource("2_tvp78")]
+position = Vector2(568.333, 168.667)
+collision_layer = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="stake2"]
+position = Vector2(-1, -60)
+scale = Vector2(5, 5)
+texture = ExtResource("10_j8bht")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="stake2"]
+position = Vector2(1.5, 7.75)
+shape = SubResource("RectangleShape2D_8u5nb")
+
+[node name="stake3" parent="." instance=ExtResource("2_tvp78")]
+position = Vector2(594.333, 202.667)
+collision_layer = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="stake3"]
+position = Vector2(-1, -60)
+scale = Vector2(5, 5)
+texture = ExtResource("10_j8bht")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="stake3"]
+position = Vector2(1.5, 7.75)
+shape = SubResource("RectangleShape2D_8u5nb")
+
+[node name="stake4" parent="." instance=ExtResource("2_tvp78")]
+position = Vector2(594.333, 168.667)
+collision_layer = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="stake4"]
+position = Vector2(-1, -60)
+scale = Vector2(5, 5)
+texture = ExtResource("10_j8bht")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="stake4"]
+position = Vector2(1.5, 7.75)
+shape = SubResource("RectangleShape2D_8u5nb")
+
+[connection signal="area_entered" from="long_pole" to="." method="_on_long_pole_area_entered"]
+[connection signal="area_entered" from="long_pole2" to="." method="_on_long_pole_2_area_entered"]
+[connection signal="area_entered" from="short_pole" to="." method="_on_short_pole_area_entered"]
+[connection signal="area_entered" from="stick" to="." method="_on_stick_area_entered"]
+[connection signal="area_entered" from="rain_fly" to="." method="_on_rain_fly_area_entered"]
+[connection signal="area_entered" from="stake" to="." method="_on_stake_area_entered"]
+[connection signal="area_entered" from="stake2" to="." method="_on_stake_2_area_entered"]
+[connection signal="area_entered" from="stake3" to="." method="_on_stake_3_area_entered"]
+[connection signal="area_entered" from="stake4" to="." method="_on_stake_4_area_entered"]
