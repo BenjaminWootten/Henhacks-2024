@@ -1,8 +1,7 @@
-[gd_scene load_steps=15 format=3 uid="uid://dknf5305dsyp5"]
+[gd_scene load_steps=14 format=3 uid="uid://cmw5628wtmehn"]
 
 [ext_resource type="Script" path="res://minigames/waterpur.gd" id="1_dpleh"]
 [ext_resource type="Texture2D" uid="uid://72xji8xyexd2" path="res://assets/minigames/water purifier/bottle.png" id="2_ggejc"]
-[ext_resource type="Script" path="res://minigames/bottle.gd" id="2_n2x0i"]
 [ext_resource type="Texture2D" uid="uid://c4a6nnmk76mlu" path="res://assets/minigames/water purifier/watermoss.png" id="3_apgry"]
 [ext_resource type="Texture2D" uid="uid://dpk6vwiyg8xav" path="res://assets/minigames/water purifier/waterstone.png" id="4_jk7c4"]
 [ext_resource type="Texture2D" uid="uid://b5r4dmbxslseq" path="res://assets/minigames/water purifier/waterpur.png" id="5_yie73"]
@@ -49,7 +48,6 @@ script = ExtResource("1_dpleh")
 position = Vector2(451, 227)
 scale = Vector2(7, 7)
 collision_mask = 2
-script = ExtResource("2_n2x0i")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="bottle"]
 sprite_frames = SubResource("SpriteFrames_g60k8")
@@ -65,7 +63,6 @@ scale = Vector2(6, 6)
 collision_layer = 2
 
 [node name="Sprite2D3" type="Sprite2D" parent="stone"]
-visible = false
 texture = ExtResource("6_xd8ev")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="stone"]
@@ -95,18 +92,10 @@ shape = SubResource("CircleShape2D_kjmyx")
 [node name="Sprite2D" type="Sprite2D" parent="sand"]
 texture = ExtResource("8_xk6fo")
 
-[connection signal="area_entered" from="bottle" to="." method="_on_bottle_area_entered"]
-[connection signal="area_entered" from="bottle" to="bottle" method="_on_area_entered"]
 [connection signal="input_event" from="bottle" to="." method="_on_bottle_input_event"]
-[connection signal="area_entered" from="stone" to="." method="_on_stone_ar_entered"]
-[connection signal="area_entered" from="stone" to="bottle" method="_on_stone_area_entered"]
-[connection signal="area_entered" from="stone" to="stone" method="_on_st_area_entered"]
+[connection signal="area_entered" from="stone" to="." method="_on_stone_area_entered"]
 [connection signal="input_event" from="stone" to="." method="_on_stone_input_event"]
-[connection signal="area_entered" from="moss" to="." method="_on_moss_ar_entered"]
-[connection signal="area_entered" from="moss" to="bottle" method="_on_moss_ar_entered"]
-[connection signal="area_entered" from="moss" to="moss" method="_on_mo_area_entered"]
+[connection signal="area_entered" from="moss" to="." method="_on_moss_area_entered"]
 [connection signal="input_event" from="moss" to="." method="_on_moss_input_event"]
-[connection signal="area_entered" from="sand" to="." method="_on_sand_ar_entered"]
-[connection signal="area_entered" from="sand" to="bottle" method="_on_sand_area_entered"]
-[connection signal="area_entered" from="sand" to="sand" method="_on_sa_area_entered"]
+[connection signal="area_entered" from="sand" to="." method="_on_sand_area_entered"]
 [connection signal="input_event" from="sand" to="." method="_on_sand_input_event"]
