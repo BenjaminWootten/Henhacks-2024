@@ -6,7 +6,7 @@ extends Node2D
 
 var locked = true
 
-const MOVE_SPEED = 5
+const MOVE_SPEED = 4
 const ROTATE_SPEED = PI/180
 var LEFT_MOVE_LIMIT = DisplayServer.window_get_size().x/4
 var RIGHT_MOVE_LIMIT = DisplayServer.window_get_size().x*3/4

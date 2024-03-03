@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://minigames/compass.gd" id="1_lmv7u"]
 [ext_resource type="Texture2D" uid="uid://2cehuux3j0cm" path="res://assets/minigames/compass/compneedle.png" id="2_gnv1p"]
-[ext_resource type="Texture2D" uid="uid://c0fths36npx5q" path="res://assets/minigames/compass/compdial.png" id="2_psn42"]
+[ext_resource type="Texture2D" uid="uid://nivivbdmf2hl" path="res://assets/minigames/compass/compdial.png" id="2_psn42"]
 
 [node name="compass" type="Node2D"]
 position = Vector2(485, 313)
@@ -14,5 +14,5 @@ scale = Vector2(3, 3)
 texture = ExtResource("2_psn42")
 
 [node name="needle_sprite" type="Sprite2D" parent="."]
-scale = Vector2(3, 3)
+scale = Vector2(2, 3)
 texture = ExtResource("2_gnv1p")
