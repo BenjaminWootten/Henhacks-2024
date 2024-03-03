@@ -33,7 +33,7 @@ func _process(delta):
 		if (self.position.x > LEFT_MOVE_LIMIT):
 			self.position.x -= MOVE_SPEED
 		else:
-			scroll.emit("right")
+			scroll.emit("left")
 
 # Lock/unlock dial when left clicking
 func _input(event):
