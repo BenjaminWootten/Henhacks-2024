@@ -128,7 +128,7 @@ position = Vector2(226, 208.667)
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="unbuilt_tent"]
 scale = Vector2(5, 5)
 sprite_frames = SubResource("SpriteFrames_6sn8r")
-animation = &"stake_1"
+animation = &"laid"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="unbuilt_tent"]
 scale = Vector2(7.8, 7.8)
