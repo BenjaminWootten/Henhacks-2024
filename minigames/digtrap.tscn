@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://b8rwxdydp0i4n"]
+
+[ext_resource type="Texture2D" uid="uid://bhupee4gvehfi" path="res://assets/minigames/digtrap/New Piskel-5.png.png" id="1_o1mht"]
+[ext_resource type="Texture2D" uid="uid://bub4endycbru5" path="res://assets/minigames/digtrap/sprite_1.png" id="2_pvrhe"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(500, 500)
+texture = ExtResource("1_o1mht")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+texture = ExtResource("2_pvrhe")
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
