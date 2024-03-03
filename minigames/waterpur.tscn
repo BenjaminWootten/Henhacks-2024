@@ -1,10 +1,11 @@
-[gd_scene load_steps=14 format=3 uid="uid://cmw5628wtmehn"]
+[gd_scene load_steps=15 format=3 uid="uid://cmw5628wtmehn"]
 
 [ext_resource type="Script" path="res://minigames/waterpur.gd" id="1_dpleh"]
 [ext_resource type="Texture2D" uid="uid://72xji8xyexd2" path="res://assets/minigames/water purifier/bottle.png" id="2_ggejc"]
 [ext_resource type="Texture2D" uid="uid://c4a6nnmk76mlu" path="res://assets/minigames/water purifier/watermoss.png" id="3_apgry"]
 [ext_resource type="Texture2D" uid="uid://dpk6vwiyg8xav" path="res://assets/minigames/water purifier/waterstone.png" id="4_jk7c4"]
 [ext_resource type="Texture2D" uid="uid://b5r4dmbxslseq" path="res://assets/minigames/water purifier/waterpur.png" id="5_yie73"]
+[ext_resource type="PackedScene" uid="uid://dyo1photquadc" path="res://utility/draggable_object.tscn" id="6_mn3cc"]
 [ext_resource type="Texture2D" uid="uid://c27rotpqs48og" path="res://assets/minigames/water purifier/stone.png" id="6_xd8ev"]
 [ext_resource type="Texture2D" uid="uid://bfrhqdphp4lco" path="res://assets/minigames/water purifier/moss.png" id="7_2sydg"]
 [ext_resource type="Texture2D" uid="uid://l8pdg6wficxu" path="res://assets/minigames/water purifier/sand.png" id="8_xk6fo"]
@@ -32,14 +33,14 @@ animations = [{
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dott7"]
 radius = 8.0
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_he26c"]
-radius = 11.7647
-
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_e777j"]
 height = 28.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_kjmyx"]
 radius = 13.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_he26c"]
+radius = 11.7647
 
 [node name="waterpur" type="Node2D"]
 script = ExtResource("1_dpleh")
@@ -47,7 +48,7 @@ script = ExtResource("1_dpleh")
 [node name="bottle" type="Area2D" parent="."]
 position = Vector2(451, 227)
 scale = Vector2(7, 7)
-collision_mask = 2
+collision_mask = 0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="bottle"]
 sprite_frames = SubResource("SpriteFrames_g60k8")
@@ -57,6 +58,7 @@ animation = &"bottle"
 position = Vector2(-2, -4)
 shape = SubResource("CapsuleShape2D_dott7")
 
+<<<<<<< Updated upstream
 [node name="stone" type="Area2D" parent="."]
 position = Vector2(763, 108)
 scale = Vector2(6, 6)
@@ -73,29 +75,45 @@ shape = SubResource("CircleShape2D_he26c")
 [node name="moss" type="Area2D" parent="."]
 position = Vector2(175, 121)
 scale = Vector2(6, 6)
+=======
+[node name="moss" parent="." instance=ExtResource("6_mn3cc")]
+position = Vector2(197, 284)
+>>>>>>> Stashed changes
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="moss"]
+scale = Vector2(6, 6)
 shape = SubResource("CapsuleShape2D_e777j")
 
 [node name="Sprite2D2" type="Sprite2D" parent="moss"]
+scale = Vector2(6, 6)
 texture = ExtResource("7_2sydg")
 
-[node name="sand" type="Area2D" parent="."]
-position = Vector2(743, 295)
-scale = Vector2(6, 6)
+[node name="sand" parent="." instance=ExtResource("6_mn3cc")]
+position = Vector2(726, 323)
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="sand"]
+scale = Vector2(6, 6)
 shape = SubResource("CircleShape2D_kjmyx")
 
 [node name="Sprite2D" type="Sprite2D" parent="sand"]
+scale = Vector2(6, 6)
 texture = ExtResource("8_xk6fo")
 
+[node name="stone" parent="." instance=ExtResource("6_mn3cc")]
+position = Vector2(736, 132)
+collision_layer = 2
+
+[node name="Sprite2D3" type="Sprite2D" parent="stone"]
+scale = Vector2(6, 6)
+texture = ExtResource("6_xd8ev")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="stone"]
+scale = Vector2(4.08001, 4.08001)
+shape = SubResource("CircleShape2D_he26c")
+
 [connection signal="input_event" from="bottle" to="." method="_on_bottle_input_event"]
-[connection signal="area_entered" from="stone" to="." method="_on_stone_area_entered"]
-[connection signal="input_event" from="stone" to="." method="_on_stone_input_event"]
 [connection signal="area_entered" from="moss" to="." method="_on_moss_area_entered"]
-[connection signal="input_event" from="moss" to="." method="_on_moss_input_event"]
 [connection signal="area_entered" from="sand" to="." method="_on_sand_area_entered"]
-[connection signal="input_event" from="sand" to="." method="_on_sand_input_event"]
+[connection signal="area_entered" from="stone" to="." method="_on_stone_area_entered"]
