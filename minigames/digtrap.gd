@@ -5,14 +5,6 @@ extends Node2D
 @onready var leaf2 = $leaf2
 @onready var solid = $solid
 
-'''func _on_long_pole_area_entered(_area):
-	if tent_sprite.animation == "laid":
-		tent_sprite.play("front_built")
-		$long_pole.queue_free()
-	elif tent_sprite.animation == "back_built":
-		tent_sprite.play("droopy")
-		$long_pole.queue_free()'''
-
 func _on_shovel_area_entered(area):
 	if ground_sprite.frame==0:
 		ground_sprite.frame=1
