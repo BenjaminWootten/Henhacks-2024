@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://6idr7pifkhno"]
+[gd_scene load_steps=19 format=3 uid="uid://6idr7pifkhno"]
 
 [ext_resource type="Texture2D" uid="uid://v3535ehhmcla" path="res://assets/tiles/Untitled.png" id="1_lmxsb"]
 [ext_resource type="Texture2D" uid="uid://3sn88ugna6l4" path="res://assets/mmparallax/sky.png" id="1_pyllt"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://d1iqgo8rwxru7" path="res://assets/minigames/water purifier/sprite_05.png" id="8_vqiux"]
 [ext_resource type="Texture2D" uid="uid://bl8w8a7d1kqp" path="res://assets/campsite/New Piskel-1.png (1).png" id="9_b33um"]
 [ext_resource type="Texture2D" uid="uid://dh3r638y3ki88" path="res://assets/UI/ranger.jpg" id="12_xq1cv"]
+[ext_resource type="Texture2D" uid="uid://d17qoyejvi8tk" path="res://assets/campsite/cloud1.png" id="14_s5fif"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_od01l"]
 texture = ExtResource("1_lmxsb")
@@ -210,6 +211,16 @@ metadata/_edit_use_anchors_ = true
 position = Vector2(622, 589)
 scale = Vector2(4, 3.19512)
 texture = ExtResource("12_xq1cv")
+
+[node name="Sprite2D9" type="Sprite2D" parent="."]
+position = Vector2(144, 128)
+scale = Vector2(5.03125, 5.03125)
+texture = ExtResource("14_s5fif")
+
+[node name="Sprite2D10" type="Sprite2D" parent="."]
+position = Vector2(606, 217)
+scale = Vector2(5.03125, 5.03125)
+texture = ExtResource("14_s5fif")
 
 [connection signal="pressed" from="Notepad/WaterButton" to="Notepad" method="_on_water_button_pressed"]
 [connection signal="pressed" from="Notepad/FireButton" to="Notepad" method="_on_fire_button_pressed"]
