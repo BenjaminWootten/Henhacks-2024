@@ -52,7 +52,7 @@ func _on_stake_area_entered(_area):
 		$stake.queue_free()
 	elif tent_sprite.animation == "stake_3":
 		$stake.queue_free()
-		tent_complete()
+		call_deferred("tent_complete")
 
 func _on_stake_2_area_entered(_area):
 	if tent_sprite.animation == "rain_fly":
@@ -66,7 +66,7 @@ func _on_stake_2_area_entered(_area):
 		$stake2.queue_free()
 	elif tent_sprite.animation == "stake_3":
 		$stake2.queue_free()
-		tent_complete()
+		call_deferred("tent_complete")
 
 func _on_stake_3_area_entered(_area):
 	if tent_sprite.animation == "rain_fly":
@@ -80,7 +80,7 @@ func _on_stake_3_area_entered(_area):
 		$stake3.queue_free()
 	elif tent_sprite.animation == "stake_3":
 		$stake3.queue_free()
-		tent_complete()
+		call_deferred("tent_complete")
 
 func _on_stake_4_area_entered(_area):
 	if tent_sprite.animation == "rain_fly":
@@ -94,11 +94,11 @@ func _on_stake_4_area_entered(_area):
 		$stake4.queue_free()
 	elif tent_sprite.animation == "stake_3":
 		$stake4.queue_free()
-		tent_complete()
+		call_deferred("tent_complete")
 
 func tent_complete():
-	get_tree().change_scene_to_file("res://assets/UI/LevelSelect.tscn")
 	global.tent_completed=true
+	get_tree().change_scene_to_file("res://assets/UI/LevelSelect.tscn")
 
 func _on_long_pole_mouse_entered():
 	box.visible=true
