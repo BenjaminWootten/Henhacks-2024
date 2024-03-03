@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://6idr7pifkhno"]
+[gd_scene load_steps=16 format=3 uid="uid://6idr7pifkhno"]
 
 [ext_resource type="Texture2D" uid="uid://v3535ehhmcla" path="res://assets/tiles/Untitled.png" id="1_lmxsb"]
 [ext_resource type="Texture2D" uid="uid://3sn88ugna6l4" path="res://assets/mmparallax/sky.png" id="1_pyllt"]
@@ -10,6 +10,7 @@
 [ext_resource type="Script" path="res://assets/UI/Notepad.gd" id="4_ooibg"]
 [ext_resource type="FontFile" uid="uid://dkh5qd2vbmivp" path="res://assets/UI/Notepen.ttf" id="4_srkwc"]
 [ext_resource type="Texture2D" uid="uid://dqwq2h0ebca47" path="res://assets/campsite/tent.png" id="6_qow2k"]
+[ext_resource type="Texture2D" uid="uid://d1iqgo8rwxru7" path="res://assets/minigames/water purifier/sprite_05.png" id="8_vqiux"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_od01l"]
 texture = ExtResource("1_lmxsb")
@@ -80,6 +81,12 @@ visible = false
 position = Vector2(578, 600)
 scale = Vector2(4, 4)
 texture = ExtResource("6_qow2k")
+
+[node name="Sprite2D6" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(691, 571)
+scale = Vector2(3.65625, 3.65625)
+texture = ExtResource("8_vqiux")
 
 [node name="Notepad" type="Sprite2D" parent="."]
 position = Vector2(914, 500)

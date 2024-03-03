@@ -1,13 +1,10 @@
-[gd_scene load_steps=28 format=3 uid="uid://bb3ooprnwnq8j"]
+[gd_scene load_steps=25 format=3 uid="uid://bb3ooprnwnq8j"]
 
 [ext_resource type="Script" path="res://minigames/waterPurifier.gd" id="1_a7yem"]
-[ext_resource type="Texture2D" uid="uid://3sn88ugna6l4" path="res://assets/mmparallax/sky.png" id="2_2sv0j"]
+[ext_resource type="PackedScene" path="res://utility/ground.tscn" id="2_k1d8b"]
 [ext_resource type="Texture2D" uid="uid://72xji8xyexd2" path="res://assets/minigames/water purifier/bottle.png" id="2_xj07t"]
 [ext_resource type="Texture2D" uid="uid://c4a6nnmk76mlu" path="res://assets/minigames/water purifier/watermoss.png" id="3_c4i8c"]
-[ext_resource type="Texture2D" uid="uid://cbcys3e4yj0wh" path="res://assets/mmparallax/mountain2.png" id="3_ipsej"]
-[ext_resource type="Texture2D" uid="uid://d3dotsv46cfpn" path="res://assets/mmparallax/pine2.png" id="4_8wsjo"]
 [ext_resource type="Texture2D" uid="uid://dpk6vwiyg8xav" path="res://assets/minigames/water purifier/waterstone.png" id="4_q04cv"]
-[ext_resource type="Texture2D" uid="uid://cirmmdqqgb4rj" path="res://assets/mmparallax/pine1.png" id="5_seqro"]
 [ext_resource type="PackedScene" uid="uid://dyo1photquadc" path="res://utility/draggable_object.tscn" id="6_4uu51"]
 [ext_resource type="Texture2D" uid="uid://bfrhqdphp4lco" path="res://assets/minigames/water purifier/moss.png" id="7_h6jnw"]
 [ext_resource type="Texture2D" uid="uid://l8pdg6wficxu" path="res://assets/minigames/water purifier/sand.png" id="8_23emf"]
@@ -73,35 +70,7 @@ size = Vector2(176, 83)
 [node name="waterPurifier" type="Node2D"]
 script = ExtResource("1_a7yem")
 
-[node name="background" type="Node2D" parent="."]
-position = Vector2(-122, -96)
-
-[node name="Sprite2D" type="Sprite2D" parent="background"]
-texture_filter = 1
-scale = Vector2(2.5, 2.5)
-texture = ExtResource("2_2sv0j")
-centered = false
-
-[node name="Sprite2D4" type="Sprite2D" parent="background"]
-texture_filter = 1
-position = Vector2(0, 200)
-scale = Vector2(2.5, 2.5)
-texture = ExtResource("3_ipsej")
-centered = false
-
-[node name="Sprite2D3" type="Sprite2D" parent="background"]
-texture_filter = 1
-position = Vector2(0, 250)
-scale = Vector2(2.5, 2.5)
-texture = ExtResource("4_8wsjo")
-centered = false
-
-[node name="Sprite2D2" type="Sprite2D" parent="background"]
-texture_filter = 1
-position = Vector2(0, 400)
-scale = Vector2(2.5, 2.5)
-texture = ExtResource("5_seqro")
-centered = false
+[node name="ground" parent="." instance=ExtResource("2_k1d8b")]
 
 [node name="bottle" type="Area2D" parent="."]
 position = Vector2(569, 184)
@@ -117,7 +86,8 @@ position = Vector2(-1, -2.85714)
 shape = SubResource("CapsuleShape2D_dott7")
 
 [node name="moss" parent="." instance=ExtResource("6_4uu51")]
-position = Vector2(795, 174)
+position = Vector2(890, 180)
+scale = Vector2(0.4, 0.4)
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="moss"]
