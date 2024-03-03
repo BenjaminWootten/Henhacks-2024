@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://bb3ooprnwnq8j"]
+[gd_scene load_steps=28 format=3 uid="uid://bb3ooprnwnq8j"]
 
 [ext_resource type="Script" path="res://minigames/waterPurifier.gd" id="1_a7yem"]
 [ext_resource type="Texture2D" uid="uid://3sn88ugna6l4" path="res://assets/mmparallax/sky.png" id="2_2sv0j"]
@@ -7,14 +7,19 @@
 [ext_resource type="Texture2D" uid="uid://cbcys3e4yj0wh" path="res://assets/mmparallax/mountain2.png" id="3_ipsej"]
 [ext_resource type="Texture2D" uid="uid://d3dotsv46cfpn" path="res://assets/mmparallax/pine2.png" id="4_8wsjo"]
 [ext_resource type="Texture2D" uid="uid://dpk6vwiyg8xav" path="res://assets/minigames/water purifier/waterstone.png" id="4_q04cv"]
-[ext_resource type="Texture2D" uid="uid://b5r4dmbxslseq" path="res://assets/minigames/water purifier/waterpur.png" id="5_70wwx"]
 [ext_resource type="Texture2D" uid="uid://cirmmdqqgb4rj" path="res://assets/mmparallax/pine1.png" id="5_seqro"]
 [ext_resource type="PackedScene" uid="uid://dyo1photquadc" path="res://utility/draggable_object.tscn" id="6_4uu51"]
 [ext_resource type="Texture2D" uid="uid://bfrhqdphp4lco" path="res://assets/minigames/water purifier/moss.png" id="7_h6jnw"]
 [ext_resource type="Texture2D" uid="uid://l8pdg6wficxu" path="res://assets/minigames/water purifier/sand.png" id="8_23emf"]
 [ext_resource type="Texture2D" uid="uid://c27rotpqs48og" path="res://assets/minigames/water purifier/stone.png" id="9_c1whs"]
+[ext_resource type="Texture2D" uid="uid://bsdfisch07pm" path="res://assets/minigames/water purifier/sprite_03.png" id="9_p081h"]
+[ext_resource type="Texture2D" uid="uid://cl65f4jqbpjbj" path="res://assets/minigames/water purifier/sprite_04.png" id="10_vcfo1"]
+[ext_resource type="Texture2D" uid="uid://d1iqgo8rwxru7" path="res://assets/minigames/water purifier/sprite_05.png" id="11_0ch0a"]
+[ext_resource type="Texture2D" uid="uid://cp7bm5hug7taq" path="res://assets/minigames/water purifier/sprite_06.png" id="12_48j8t"]
 [ext_resource type="PackedScene" uid="uid://df10wyvwcyaao" path="res://utility/tip.tscn" id="14_6reow"]
 [ext_resource type="PackedScene" uid="uid://bnwstotpwaiy8" path="res://assets/UI/bottomtray.tscn" id="15_xh53m"]
+[ext_resource type="Texture2D" uid="uid://bh5wnia52ayv2" path="res://assets/minigames/water purifier/coal.png" id="17_7xfnh"]
+[ext_resource type="Texture2D" uid="uid://cfcoe8qtkqhfu" path="res://assets/minigames/water purifier/coarse.png" id="18_xuiky"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_g60k8"]
 animations = [{
@@ -29,7 +34,16 @@ animations = [{
 "texture": ExtResource("4_q04cv")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_70wwx")
+"texture": ExtResource("9_p081h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_vcfo1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_0ch0a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_48j8t")
 }],
 "loop": true,
 "name": &"bottle",
@@ -38,15 +52,23 @@ animations = [{
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dott7"]
 radius = 8.0
+height = 25.1429
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_e777j"]
-height = 28.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y86dh"]
+size = Vector2(20, 25)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_kjmyx"]
-radius = 13.0
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gx33w"]
+radius = 6.5
+height = 23.6667
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_he26c"]
-radius = 11.7647
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j8p2y"]
+size = Vector2(42.647, 25.098)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mjshe"]
+radius = 74.0068
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ubiq8"]
+size = Vector2(176, 83)
 
 [node name="waterPurifier" type="Node2D"]
 script = ExtResource("1_a7yem")
@@ -82,7 +104,7 @@ texture = ExtResource("5_seqro")
 centered = false
 
 [node name="bottle" type="Area2D" parent="."]
-position = Vector2(517, 206)
+position = Vector2(569, 184)
 scale = Vector2(7, 7)
 collision_mask = 0
 
@@ -91,16 +113,17 @@ sprite_frames = SubResource("SpriteFrames_g60k8")
 animation = &"bottle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="bottle"]
-position = Vector2(-2, -4)
+position = Vector2(-1, -2.85714)
 shape = SubResource("CapsuleShape2D_dott7")
 
 [node name="moss" parent="." instance=ExtResource("6_4uu51")]
-position = Vector2(222, 368)
+position = Vector2(795, 174)
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="moss"]
+position = Vector2(0, 15)
 scale = Vector2(6, 6)
-shape = SubResource("CapsuleShape2D_e777j")
+shape = SubResource("RectangleShape2D_y86dh")
 
 [node name="Sprite2D2" type="Sprite2D" parent="moss"]
 scale = Vector2(6, 6)
@@ -111,15 +134,16 @@ position = Vector2(738, 493)
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="sand"]
+rotation = 1.5708
 scale = Vector2(6, 6)
-shape = SubResource("CircleShape2D_kjmyx")
+shape = SubResource("CapsuleShape2D_gx33w")
 
 [node name="Sprite2D" type="Sprite2D" parent="sand"]
 scale = Vector2(6, 6)
 texture = ExtResource("8_23emf")
 
 [node name="stone" parent="." instance=ExtResource("6_4uu51")]
-position = Vector2(744, 156)
+position = Vector2(1002, 357)
 collision_layer = 2
 
 [node name="Sprite2D3" type="Sprite2D" parent="stone"]
@@ -127,8 +151,34 @@ scale = Vector2(6, 6)
 texture = ExtResource("9_c1whs")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="stone"]
+position = Vector2(-1.5, 15.0999)
 scale = Vector2(4.08001, 4.08001)
-shape = SubResource("CircleShape2D_he26c")
+shape = SubResource("RectangleShape2D_j8p2y")
+
+[node name="coal" parent="." instance=ExtResource("6_4uu51")]
+position = Vector2(317, 342)
+collision_layer = 2
+
+[node name="Sprite2D3" type="Sprite2D" parent="coal"]
+position = Vector2(-3, 14)
+scale = Vector2(6, 6)
+texture = ExtResource("17_7xfnh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="coal"]
+position = Vector2(1, 28)
+shape = SubResource("CircleShape2D_mjshe")
+
+[node name="coarse" parent="." instance=ExtResource("6_4uu51")]
+position = Vector2(127, 178)
+collision_layer = 2
+
+[node name="Sprite2D3" type="Sprite2D" parent="coarse"]
+scale = Vector2(6, 6)
+texture = ExtResource("18_xuiky")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="coarse"]
+position = Vector2(-2, 12.5)
+shape = SubResource("RectangleShape2D_ubiq8")
 
 [node name="Control" parent="." instance=ExtResource("14_6reow")]
 offset_left = 364.0
@@ -140,11 +190,34 @@ offset_bottom = 460.0
 offset_top = 548.0
 offset_bottom = 648.0
 
+[node name="Button" type="Button" parent="."]
+visible = false
+offset_left = 445.0
+offset_top = 318.0
+offset_right = 677.0
+offset_bottom = 349.0
+text = "Pour water through the filter"
+
+[node name="Timer" type="Timer" parent="Button"]
+wait_time = 3.0
+
 [connection signal="area_entered" from="bottle" to="." method="_on_bottle_area_entered"]
 [connection signal="area_entered" from="bottle" to="bottle" method="_on_area_entered"]
 [connection signal="input_event" from="bottle" to="." method="_on_bottle_input_event"]
 [connection signal="area_entered" from="moss" to="." method="_on_moss_area_entered"]
+[connection signal="mouse_entered" from="moss" to="." method="_on_moss_mouse_entered"]
+[connection signal="mouse_exited" from="moss" to="." method="_on_moss_mouse_exited"]
 [connection signal="area_entered" from="sand" to="." method="_on_sand_area_entered"]
+[connection signal="mouse_entered" from="sand" to="." method="_on_sand_mouse_entered"]
+[connection signal="mouse_exited" from="sand" to="." method="_on_sand_mouse_exited"]
 [connection signal="area_entered" from="stone" to="." method="_on_stone_area_entered"]
 [connection signal="mouse_entered" from="stone" to="." method="_on_stone_mouse_entered"]
 [connection signal="mouse_exited" from="stone" to="." method="_on_stone_mouse_exited"]
+[connection signal="area_entered" from="coal" to="." method="_on_coal_area_entered"]
+[connection signal="mouse_entered" from="coal" to="." method="_on_coal_mouse_entered"]
+[connection signal="mouse_exited" from="coal" to="." method="_on_coal_mouse_exited"]
+[connection signal="area_entered" from="coarse" to="." method="_on_coarse_area_entered"]
+[connection signal="mouse_entered" from="coarse" to="." method="_on_coarse_mouse_entered"]
+[connection signal="mouse_exited" from="coarse" to="." method="_on_coarse_mouse_exited"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="timeout" from="Button/Timer" to="." method="_on_timer_timeout"]
