@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://d3gfoe87v2cuk"]
+[gd_scene load_steps=27 format=3 uid="uid://bnhdqbe2qsnxs"]
 
 [ext_resource type="Texture2D" uid="uid://c0jtquhbuga5b" path="res://assets/minigames/tent/tent_laid.png" id="1_jscna"]
 [ext_resource type="Texture2D" uid="uid://bn0wr48lahgiv" path="res://assets/minigames/tent/tent_back_built.png" id="1_ps7fy"]
@@ -17,6 +17,8 @@
 [ext_resource type="Texture2D" uid="uid://d34cpd2pace8o" path="res://assets/minigames/tent/tent_stake.png" id="10_j8bht"]
 [ext_resource type="Texture2D" uid="uid://cgu6rf85hxnyp" path="res://assets/minigames/tent/tent_stake3.png" id="10_qphl8"]
 [ext_resource type="Texture2D" uid="uid://bpxo6ivcc1h8v" path="res://assets/minigames/tent/tent_dark.png" id="11_3ywef"]
+[ext_resource type="PackedScene" uid="uid://bnwstotpwaiy8" path="res://assets/UI/bottomtray.tscn" id="18_fw3q0"]
+[ext_resource type="PackedScene" uid="uid://df10wyvwcyaao" path="res://utility/tip.tscn" id="19_wiv26"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_6sn8r"]
 animations = [{
@@ -119,11 +121,11 @@ size = Vector2(134, 83)
 size = Vector2(15, 24.5)
 
 [node name="tent" type="Node2D"]
-scale = Vector2(1.5, 1.5)
 script = ExtResource("1_vw6ua")
 
 [node name="unbuilt_tent" type="Area2D" parent="."]
 position = Vector2(226, 208.667)
+scale = Vector2(1.5, 1.5)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="unbuilt_tent"]
 scale = Vector2(5, 5)
@@ -135,7 +137,8 @@ scale = Vector2(7.8, 7.8)
 shape = SubResource("RectangleShape2D_ttwcl")
 
 [node name="long_pole" parent="." instance=ExtResource("2_tvp78")]
-position = Vector2(524.333, 179.667)
+position = Vector2(810, 223)
+scale = Vector2(1.5, 1.5)
 collision_layer = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="long_pole"]
@@ -148,7 +151,8 @@ scale = Vector2(0.24, 7.96)
 shape = SubResource("RectangleShape2D_hp354")
 
 [node name="long_pole2" parent="." instance=ExtResource("2_tvp78")]
-position = Vector2(499.333, 179.667)
+position = Vector2(846, 222)
+scale = Vector2(1.5, 1.5)
 collision_layer = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="long_pole2"]
@@ -161,8 +165,9 @@ scale = Vector2(0.24, 7.96)
 shape = SubResource("RectangleShape2D_hp354")
 
 [node name="short_pole" parent="." instance=ExtResource("2_tvp78")]
-position = Vector2(545.333, 180.667)
+position = Vector2(907, 201)
 rotation = 1.5708
+scale = Vector2(1.5, 1.5)
 collision_layer = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="short_pole"]
@@ -174,7 +179,8 @@ position = Vector2(25, -2.33331)
 shape = SubResource("RectangleShape2D_bhnie")
 
 [node name="stick" parent="." instance=ExtResource("2_tvp78")]
-position = Vector2(583.333, 126.667)
+position = Vector2(1025, 101)
+scale = Vector2(1.5, 1.5)
 collision_layer = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="stick"]
@@ -186,7 +192,8 @@ position = Vector2(-2.33337, -0.666634)
 shape = SubResource("RectangleShape2D_aew4p")
 
 [node name="rain_fly" parent="." instance=ExtResource("2_tvp78")]
-position = Vector2(516.333, 311.667)
+position = Vector2(941, 459)
+scale = Vector2(1.5, 1.5)
 collision_layer = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="rain_fly"]
@@ -198,7 +205,8 @@ position = Vector2(12, -2.5)
 shape = SubResource("RectangleShape2D_dsxqn")
 
 [node name="stake" parent="." instance=ExtResource("2_tvp78")]
-position = Vector2(568.333, 202.667)
+position = Vector2(1031, 234)
+scale = Vector2(1.5, 1.5)
 collision_layer = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="stake"]
@@ -211,7 +219,8 @@ position = Vector2(1.5, 7.75)
 shape = SubResource("RectangleShape2D_8u5nb")
 
 [node name="stake2" parent="." instance=ExtResource("2_tvp78")]
-position = Vector2(568.333, 168.667)
+position = Vector2(1031, 184)
+scale = Vector2(1.5, 1.5)
 collision_layer = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="stake2"]
@@ -224,7 +233,8 @@ position = Vector2(1.5, 7.75)
 shape = SubResource("RectangleShape2D_8u5nb")
 
 [node name="stake3" parent="." instance=ExtResource("2_tvp78")]
-position = Vector2(594.333, 202.667)
+position = Vector2(1087, 236)
+scale = Vector2(1.5, 1.5)
 collision_layer = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="stake3"]
@@ -237,7 +247,8 @@ position = Vector2(1.5, 7.75)
 shape = SubResource("RectangleShape2D_8u5nb")
 
 [node name="stake4" parent="." instance=ExtResource("2_tvp78")]
-position = Vector2(594.333, 168.667)
+position = Vector2(1086, 183)
+scale = Vector2(1.5, 1.5)
 collision_layer = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="stake4"]
@@ -249,12 +260,42 @@ texture = ExtResource("10_j8bht")
 position = Vector2(1.5, 7.75)
 shape = SubResource("RectangleShape2D_8u5nb")
 
+[node name="PanelContainer" parent="." instance=ExtResource("18_fw3q0")]
+offset_top = 548.0
+offset_bottom = 648.0
+
+[node name="Control" parent="." instance=ExtResource("19_wiv26")]
+offset_left = 428.0
+offset_top = 458.0
+offset_right = 428.0
+offset_bottom = 458.0
+
+[connection signal="mouse_entered" from="unbuilt_tent" to="." method="_on_unbuilt_tent_mouse_entered"]
+[connection signal="mouse_exited" from="unbuilt_tent" to="." method="_on_unbuilt_tent_mouse_exited"]
 [connection signal="area_entered" from="long_pole" to="." method="_on_long_pole_area_entered"]
+[connection signal="mouse_entered" from="long_pole" to="." method="_on_long_pole_mouse_entered"]
+[connection signal="mouse_exited" from="long_pole" to="." method="_on_long_pole_mouse_exited"]
 [connection signal="area_entered" from="long_pole2" to="." method="_on_long_pole_2_area_entered"]
+[connection signal="mouse_entered" from="long_pole2" to="." method="_on_long_pole_2_mouse_entered"]
+[connection signal="mouse_exited" from="long_pole2" to="." method="_on_long_pole_2_mouse_exited"]
 [connection signal="area_entered" from="short_pole" to="." method="_on_short_pole_area_entered"]
+[connection signal="mouse_entered" from="short_pole" to="." method="_on_short_pole_mouse_entered"]
+[connection signal="mouse_exited" from="short_pole" to="." method="_on_short_pole_mouse_exited"]
 [connection signal="area_entered" from="stick" to="." method="_on_stick_area_entered"]
+[connection signal="mouse_entered" from="stick" to="." method="_on_stick_mouse_entered"]
+[connection signal="mouse_exited" from="stick" to="." method="_on_stick_mouse_exited"]
 [connection signal="area_entered" from="rain_fly" to="." method="_on_rain_fly_area_entered"]
+[connection signal="mouse_entered" from="rain_fly" to="." method="_on_rain_fly_mouse_entered"]
+[connection signal="mouse_exited" from="rain_fly" to="." method="_on_rain_fly_mouse_exited"]
 [connection signal="area_entered" from="stake" to="." method="_on_stake_area_entered"]
+[connection signal="mouse_entered" from="stake" to="." method="_on_stake_mouse_entered"]
+[connection signal="mouse_exited" from="stake" to="." method="_on_stake_mouse_exited"]
 [connection signal="area_entered" from="stake2" to="." method="_on_stake_2_area_entered"]
+[connection signal="mouse_entered" from="stake2" to="." method="_on_stake_2_mouse_entered"]
+[connection signal="mouse_exited" from="stake2" to="." method="_on_stake_2_mouse_exited"]
 [connection signal="area_entered" from="stake3" to="." method="_on_stake_3_area_entered"]
+[connection signal="mouse_entered" from="stake3" to="." method="_on_stake_3_mouse_entered"]
+[connection signal="mouse_exited" from="stake3" to="." method="_on_stake_3_mouse_exited"]
 [connection signal="area_entered" from="stake4" to="." method="_on_stake_4_area_entered"]
+[connection signal="mouse_entered" from="stake4" to="." method="_on_stake_4_mouse_entered"]
+[connection signal="mouse_exited" from="stake4" to="." method="_on_stake_4_mouse_exited"]

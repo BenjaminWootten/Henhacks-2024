@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://6idr7pifkhno"]
+[gd_scene load_steps=14 format=3 uid="uid://6idr7pifkhno"]
 
 [ext_resource type="Texture2D" uid="uid://v3535ehhmcla" path="res://assets/tiles/Untitled.png" id="1_lmxsb"]
 [ext_resource type="Texture2D" uid="uid://3sn88ugna6l4" path="res://assets/mmparallax/sky.png" id="1_pyllt"]
@@ -29,6 +29,8 @@ terrain_set_0/mode = 0
 sources/0 = SubResource("TileSetAtlasSource_od01l")
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ebknh"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7b8ww"]
 
 [node name="Control2" type="Control"]
 layout_mode = 3
@@ -158,6 +160,32 @@ theme_override_styles/pressed = SubResource("StyleBoxEmpty_ebknh")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_ebknh")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_ebknh")
 text = "Orient Compass"
+metadata/_edit_use_anchors_ = true
+
+[node name="TentButton" type="Button" parent="Sprite2D5/Notepad"]
+offset_left = -131.25
+offset_top = -12.5
+offset_right = 24.75
+offset_bottom = 18.5
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_srkwc")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxEmpty_7b8ww")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_7b8ww")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_7b8ww")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_7b8ww")
+text = "Setup Tent"
 metadata/_edit_use_anchors_ = true
 
 [connection signal="pressed" from="Sprite2D5/Notepad/WaterButton" to="Sprite2D5/Notepad" method="_on_water_button_pressed"]
