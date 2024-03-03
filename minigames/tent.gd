@@ -4,9 +4,11 @@ extends Node2D
 @onready var tip=$PanelContainer/HBoxContainer/Label
 @onready var label=$Control/MarginContainer/MarginContainer/Label
 @onready var box=$Control
+@onready var global=get_node("/root/Global")
 
 func _ready():
 	tip.text="Build dat bitch"
+
 func _on_long_pole_area_entered(_area):
 	if tent_sprite.animation == "laid":
 		tent_sprite.play("front_built")
@@ -95,8 +97,8 @@ func _on_stake_4_area_entered(_area):
 		tent_complete()
 
 func tent_complete():
-	print("tent complete")
-
+	get_tree().change_scene_to_file("res://assets/UI/LevelSelect.tscn")
+	global.tent_completed=true
 
 func _on_long_pole_mouse_entered():
 	box.visible=true
